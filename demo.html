@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Giao Diện SchoolPop 2026 — Phương Án B (Pastel Minimal)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sp-bg: #F3F9F8;
+            --sp-surface: #FFFFFF;
+            --sp-text: #1F2430;
+            --sp-muted: #687282;
+            --sp-mint: #D4ECE8;
+            --sp-pink: #F9D7E8;
+            --sp-yellow: #FFE8AA;
+            --sp-lavender: #E5D9F5;
+            --sp-blue: #DCEBF9;
+            --sp-accent: #222832;
+            --sp-border: #E8EEF0;
+            --sp-success: #48BFA8;
+            --sp-radius-outer: 32px;
+            --sp-radius-card: 24px;
+            --sp-radius-control: 18px;
+            --sp-shadow: 0 16px 42px rgba(36, 60, 65, 0.07);
+            --sp-shadow-card: 0 8px 24px rgba(36, 60, 65, 0.05);
+            --sp-speed: 180ms;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', 'Nunito', system-ui, -apple-system, sans-serif;
+            color: var(--sp-text);
+            background: radial-gradient(circle at 92% 10%, #fadce9 0 14%, transparent 15%),
+                        radial-gradient(circle at 8% 90%, #d5ebe6 0 18%, transparent 19%),
+                        var(--sp-bg);
+            min-height: 100vh;
+            padding: 68px 24px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ---------------- PREVIEW TOPBAR SWITCHER ---------------- */
+        .preview-bar {
+            position: fixed;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99999;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(220, 230, 235, 0.8);
+            border-radius: 999px;
+            padding: 6px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .preview-brand {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--sp-accent);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-right: 10px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .preview-brand span {
+            color: #48BFA8;
+            font-size: 16px;
+        }
+
+        .preview-tabs {
+            display: flex;
+            gap: 6px;
+        }
+
+        .preview-btn {
+            font-family: inherit;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: none;
+            background: transparent;
+            color: #475569;
+            cursor: pointer;
+            transition: all var(--sp-speed) ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .preview-btn:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .preview-btn.active {
+            background: var(--sp-accent);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(34, 40, 50, 0.2);
+        }
+
+        .responsive-pill {
+            display: flex;
+            background: #f1f5f9;
+            border-radius: 999px;
+            padding: 3px;
+            margin-left: 6px;
+        }
+
+        .resp-btn {
+            font-family: inherit;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            cursor: pointer;
+            transition: all var(--sp-speed);
+        }
+
+        .resp-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        /* ---------------- WRAPPER KHUNG CHÍNH ---------------- */
+        .stage-wrapper {
+            width: 100%;
+            max-width: 1320px;
+            transition: max-width 300ms ease;
+            display: flex;
+            justify-content: center;
+        }
+
+        .stage-wrapper.mobile-mode {
+            max-width: 390px;
+        }
+
+        .app-window {
+            width: 100%;
+            background: var(--sp-surface);
+            border-radius: var(--sp-radius-outer);
+            box-shadow: var(--sp-shadow);
+            overflow: hidden;
+            display: flex;
+            min-height: 740px;
+            position: relative;
+            border: 1px solid rgba(230, 238, 240, 0.6);
+        }
+
+        /* View container transitions */
+        .view-pane {
+            width: 100%;
+            display: none;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 220ms ease, transform 220ms ease;
+        }
+
+        .view-pane.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ---------------- SIDEBAR PHƯƠNG ÁN B ---------------- */
+        .side-nav {
+            width: 86px;
+            flex-shrink: 0;
+            background: #ffffff;
+            border-right: 1px solid var(--sp-border);
+            padding: 28px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .side-logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--sp-accent);
+            margin-bottom: 24px;
+            user-select: none;
+        }
+
+        .side-logo span {
+            color: var(--sp-success);
+        }
+
+        .nav-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            color: #64748b;
+            text-decoration: none;
+            transition: all var(--sp-speed) ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-item svg {
+            width: 22px;
+            height: 22px;
+            stroke-width: 2;
+        }
+
+        .nav-item:hover {
+            background: #f8fafc;
+            color: var(--sp-accent);
+            transform: translateY(-1px);
+        }
+
+        .nav-item.active {
+            background: var(--sp-accent);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(34, 40, 50, 0.18);
+        }
+
+        .nav-spacer {
+            flex: 1;
+        }
+
+        /* ---------------- KHU VỰC NỘI DUNG CHÍNH (MAIN) ---------------- */
+        .main-content {
+            flex: 1;
+            padding: 34px 36px;
+            background: #FAFDFD;
+            overflow-y: auto;
+        }
+
+        /* TOPBAR */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .topbar-title h1 {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            color: var(--sp-text);
+            line-height: 1.2;
+        }
+
+        .topbar-title p {
+            font-size: 13px;
+            color: var(--sp-muted);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .search-pill {
+            background: #ffffff;
+            border: 1px solid var(--sp-border);
+            border-radius: 999px;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--sp-muted);
+            font-size: 13px;
+            min-width: 280px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .search-pill input {
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 13px;
+            width: 100%;
+            background: transparent;
+            color: var(--sp-text);
+        }
+
+        .badge-cloud {
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #E6F7F4;
+            color: #0E766E;
+            font-size: 11.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(72, 191, 168, 0.3);
+        }
+
+        .avatar-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--sp-pink);
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(249, 215, 232, 0.6);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* GRID LAYOUT (2 CỘT CHÍNH + 1 CỘT PHỤ) */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.8fr) minmax(320px, 1fr);
+            gap: 26px;
+        }
+
+        /* 4 QUICK CARDS PASTEL LỚN */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 26px;
+        }
+
+        .card-pop {
+            min-height: 142px;
+            padding: 22px 24px;
+            border-radius: var(--sp-radius-card);
+            position: relative;
+            box-shadow: var(--sp-shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all var(--sp-speed) ease;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .card-pop:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(36, 60, 65, 0.09);
+        }
+
+        .card-pop.mint { background: var(--sp-mint); }
+        .card-pop.pink { background: var(--sp-pink); }
+        .card-pop.yellow { background: var(--sp-yellow); }
+        .card-pop.lavender { background: var(--sp-lavender); }
+
+        .card-pop-icon {
+            width: 36px;
+            height: 36px;
+            color: var(--sp-accent);
+        }
+
+        .card-pop h3 {
+            font-size: 18.5px;
+            font-weight: 800;
+            margin: 14px 0 4px;
+            color: var(--sp-text);
+            line-height: 1.3;
+        }
+
+        .card-pop p {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #4A5568;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .card-go-btn {
+            position: absolute;
+            bottom: 18px;
+            right: 18px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: grid;
+            place-items: center;
+            color: var(--sp-accent);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            transition: transform var(--sp-speed) ease;
+        }
+
+        .card-pop:hover .card-go-btn {
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        /* SECTION TIÊU ĐỀ */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 24px 0 14px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            color: var(--sp-text);
+        }
+
+        .section-header a {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0E766E;
+            text-decoration: none;
+        }
+
+        /* THỐNG KÊ 3 Ô */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .stat-box {
+            padding: 18px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 104px;
+        }
+
+        .stat-box b {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--sp-text);
+            letter-spacing: -0.5px;
+            margin-top: 8px;
+        }
+
+        .stat-box.s-mint { background: #E6F6F3; }
+        .stat-box.s-yellow { background: #FFF4D9; }
+        .stat-box.s-purple { background: #F3ECFA; }
+
+        /* DANH SÁCH HOẠT ĐỘNG */
+        .panel-white {
+            background: #ffffff;
+            border-radius: var(--sp-radius-card);
+            padding: 24px;
+            box-shadow: var(--sp-shadow-card);
+            border: 1px solid var(--sp-border);
+            margin-bottom: 22px;
+        }
+
+        .panel-white h3 {
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid #f1f5f9;
+            gap: 14px;
+            font-size: 13px;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .activity-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 17px;
+        }
+
+        .activity-title {
+            font-weight: 700;
+            color: var(--sp-text);
+        }
+
+        .activity-sub {
+            font-size: 11.5px;
+            color: var(--sp-muted);
+            margin-top: 2px;
+        }
+
+        .status-chip {
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .status-chip.green { background: #dcfce7; color: #15803d; }
+        .status-chip.amber { background: #fef3c7; color: #b45309; }
+        .status-chip.blue { background: #e0f2fe; color: #0369a1; }
+
+        /* LỊCH & TIẾN ĐỘ Ở CỘT PHẢI */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        .calendar-cell {
+            padding: 10px 0;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #334155;
+            user-select: none;
+        }
+
+        .calendar-cell.weekday {
+            font-size: 11px;
+            font-weight: 800;
+            color: #94a3b8;
+            padding-bottom: 6px;
+        }
+
+        .calendar-cell.highlight {
+            background: var(--sp-mint);
+            color: #0d9488;
+            font-weight: 800;
+        }
+
+        .calendar-cell.today {
+            background: var(--sp-accent);
+            color: #ffffff;
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(34, 40, 50, 0.25);
+        }
+
+        .progress-bar-wrap {
+            height: 10px;
+            background: #F1F5F9;
+            border-radius: 999px;
+            overflow: hidden;
+            margin: 14px 0 8px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--sp-success);
+            border-radius: 999px;
+            transition: width 500ms ease;
+        }
+
+        /* ---------------- GIAO DIỆN ĐĂNG NHẬP ---------------- */
+        .login-canvas {
+            width: 100%;
+            display: flex;
+            min-height: 720px;
+        }
+
+        .login-hero {
+            flex: 1.1;
+            background: linear-gradient(135deg, #f0fdf9 0%, #fdf2f8 100%);
+            padding: 56px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            border-right: 1px solid var(--sp-border);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #0E766E;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            width: fit-content;
+        }
+
+        .hero-heading {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.25;
+            color: var(--sp-text);
+            margin: 20px 0 12px;
+        }
+
+        .hero-desc {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: var(--sp-muted);
+            max-width: 440px;
+        }
+
+        .hero-features {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .feature-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--sp-mint);
+            color: #0f766e;
+            display: grid;
+            place-items: center;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .mascot-box {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: var(--sp-shadow-card);
+            border: 1px solid #f0fdf4;
+            max-width: 420px;
+        }
+
+        .mascot-avatar {
+            width: 58px;
+            height: 58px;
+            border-radius: 20px;
+            background: #fce7f3;
+            display: grid;
+            place-items: center;
+            font-size: 32px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 16px rgba(244, 114, 182, 0.2);
+        }
+
+        /* FORM BÊN PHẢI */
+        .login-form-side {
+            flex: 1;
+            padding: 56px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #ffffff;
+        }
+
+        .role-switch {
+            display: flex;
+            background: #f1f5f9;
+            padding: 4px;
+            border-radius: 999px;
+            margin-bottom: 28px;
+        }
+
+        .role-tab {
+            flex: 1;
+            padding: 10px 0;
+            border-radius: 999px;
+            border: none;
+            background: transparent;
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 800;
+            color: #64748b;
+            cursor: pointer;
+            transition: all var(--sp-speed);
+        }
+
+        .role-tab.active {
+            background: #ffffff;
+            color: var(--sp-text);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 800;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        .input-pop {
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: var(--sp-radius-control);
+            border: 1.5px solid var(--sp-border);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sp-text);
+            background: #fbfcfd;
+            outline: none;
+            transition: all var(--sp-speed);
+        }
+
+        .input-pop:focus {
+            border-color: #48BFA8;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(72, 191, 168, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            border-radius: var(--sp-radius-control);
+            background: var(--sp-accent);
+            color: #ffffff;
+            border: none;
+            font-family: inherit;
+            font-size: 14.5px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all var(--sp-speed);
+            box-shadow: 0 8px 20px rgba(34, 40, 50, 0.16);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .btn-submit:hover {
+            background: #11151c;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(34, 40, 50, 0.22);
+        }
+
+        .btn-guest {
+            width: 100%;
+            padding: 12px;
+            border-radius: var(--sp-radius-control);
+            background: #f1f5f9;
+            color: #334155;
+            border: none;
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all var(--sp-speed);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .btn-guest:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        /* RESPONSIVE TRÊN MÀN HÌNH NHỎ */
+        @media (max-width: 1024px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .login-canvas {
+                flex-direction: column;
+            }
+            .login-hero {
+                border-right: none;
+                border-bottom: 1px solid var(--sp-border);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 64px 8px 16px;
+            }
+            .app-window {
+                border-radius: 22px;
+                min-height: auto;
+            }
+            .side-nav {
+                display: none;
+            }
+            .main-content {
+                padding: 20px 16px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+            }
+            .search-pill {
+                display: none;
+            }
+            .topbar-title h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- THANH CHUYỂN ĐỔI CHẾ ĐỘ XEM TRƯỚC (PREVIEW CONTROLLER) -->
+    <div class="preview-bar">
+        <div class="preview-brand">
+            <span>●</span> SchoolPop 2026 (Phương án B)
+        </div>
+        <div class="preview-tabs">
+            <button class="preview-btn active" onclick="switchView('login', this)">
+                🔑 1. Đăng nhập
+            </button>
+            <button class="preview-btn" onclick="switchView('teacher', this)">
+                👩‍🏫 2. GV Dashboard
+            </button>
+            <button class="preview-btn" onclick="switchView('student', this)">
+                🎒 3. HS Dashboard
+            </button>
+        </div>
+        <div class="responsive-pill">
+            <button class="resp-btn active" onclick="setScreenMode('desktop', this)">💻 Desktop</button>
+            <button class="resp-btn" onclick="setScreenMode('mobile', this)">📱 Mobile</button>
+        
+        <div style="margin-left: auto; display: flex; gap: 8px;">
+            <a href="index.html" class="preview-btn" style="background: #0F766E; color: #ffffff; text-decoration: none;">
+                ⚡ Mở Hệ Thống Thi Thực Tế ➜
+            </a>
+        </div>
+</div>
+    </div>
+
+    <!-- KHUNG CHÍNH (STAGE) -->
+    <div id="stageWrapper" class="stage-wrapper">
+        <div class="app-window">
+
+            <!-- ============================================================== -->
+            <!-- MÀN HÌNH 1: GIAO DIỆN ĐĂNG NHẬP (PASTEL MINIMAL LOGIN) -->
+            <!-- ============================================================== -->
+            <div id="view-login" class="view-pane active">
+                <div class="login-canvas">
+                    <!-- Bên trái: Giới thiệu & Linh vật -->
+                    <div class="login-hero">
+                        <div>
+                            <div class="hero-badge">
+                                <span>✨</span> Nền tảng Giáo dục 2026
+                            </div>
+                            <h2 class="hero-heading">Quản Lý &amp; Giao Đề Thi Tự Học</h2>
+                            <p class="hero-desc">
+                                Giải pháp số hóa thi cử toàn diện cho giáo viên phổ thông: Trắc nghiệm 4 phần chuẩn Bộ GD&amp;ĐT, chấm tự luận bằng ảnh, ngân hàng câu hỏi SGK mới và thi đấu trực tiếp P2P.
+                            </p>
+                            <div class="hero-features">
+                                <div class="feature-item">
+                                    <div class="feature-check">✓</div>
+                                    <span>Trộn đề &amp; Nhận diện tự động MathType, ChemDraw</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-check">✓</div>
+                                    <span>Chạy trực tiếp 100% trên GitHub Pages không tốn phí máy chủ</span>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-check">✓</div>
+                                    <span>Đồng bộ tức thì Firebase Realtime &amp; Hỗ trợ làm bài Offline</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hộp Linh vật Mascot học trò -->
+                        <div class="mascot-box">
+                            <div class="mascot-avatar">🐱</div>
+                            <div>
+                                <div style="font-weight: 800; font-size: 14.5px; color: #1e293b;">Chào mừng Thầy Cô &amp; Học sinh!</div>
+                                <div style="font-size: 12px; color: #64748b; margin-top: 3px;">
+                                    Đăng nhập để vào không gian giảng dạy hoặc làm bài kiểm tra được giao.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bên phải: Form đăng nhập -->
+                    <div class="login-form-side">
+                        <div class="role-switch">
+                            <button id="role-tab-gv" class="role-tab active" onclick="setLoginRole('gv')">👩‍🏫 Giáo Viên</button>
+                            <button id="role-tab-hs" class="role-tab" onclick="setLoginRole('hs')">🎒 Học Sinh</button>
+                        </div>
+
+                        <!-- Form Giáo viên -->
+                        <div id="form-gv">
+                            <div class="input-group">
+                                <label>Họ và tên Giáo viên</label>
+                                <input type="text" class="input-pop" placeholder="Ví dụ: Thầy Hùng" value="Thầy Hùng">
+                            </div>
+                            <div class="input-group">
+                                <label>Mật khẩu quản trị</label>
+                                <input type="password" class="input-pop" placeholder="Nhập mật khẩu..." value="••••••••">
+                            </div>
+                            <button type="button" class="btn-submit" onclick="switchView('teacher', document.querySelectorAll('.preview-btn')[1])">
+                                <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg> ĐĂNG NHẬP QUẢN TRỊ
+                            </button>
+                            <button type="button" class="btn-guest" onclick="switchView('teacher', document.querySelectorAll('.preview-btn')[1])">
+                                <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 5"/></svg> Vào với tư cách Khách (Hộp cát Sandbox)
+                            </button>
+                        </div>
+
+                        <!-- Form Học sinh -->
+                        <div id="form-hs" style="display: none;">
+                            <div class="input-group">
+                                <label>Họ và tên Học sinh</label>
+                                <input type="text" class="input-pop" placeholder="Ví dụ: Nguyễn Hoàng Minh">
+                            </div>
+                            <div class="input-group">
+                                <label>Lớp học</label>
+                                <input type="text" class="input-pop" placeholder="Ví dụ: 8A5">
+                            </div>
+                            <div class="input-group">
+                                <label>Mã đề hoặc Mã lớp (nếu có)</label>
+                                <input type="text" class="input-pop" placeholder="Để trống nếu vào ôn luyện tự do">
+                            </div>
+                            <button type="button" class="btn-submit" onclick="switchView('student', document.querySelectorAll('.preview-btn')[2])">
+                                <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg> VÀO LÀM BÀI NGAY
+                            </button>
+                            <button type="button" class="btn-guest" onclick="switchView('student', document.querySelectorAll('.preview-btn')[2])">
+                                <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><path d="M7 6h10a5 5 0 0 1 5 5v4a3 3 0 0 1-5 2l-2-2H9l-2 2a3 3 0 0 1-5-2v-4a5 5 0 0 1 5-5Z"/></svg> Tự luyện không cần tài khoản
+                            </button>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 24px; font-size: 12px; color: var(--sp-muted);">
+                            Hệ thống bảo mật cục bộ SHA-256 • Dữ liệu lưu tại thiết bị và đám mây riêng của trường
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- MÀN HÌNH 2: DASHBOARD GIÁO VIÊN (TEACHER DASHBOARD) -->
+            <!-- ============================================================== -->
+            <div id="view-teacher" class="view-pane">
+                <!-- Sidebar icon thon gọn (86px) -->
+                <aside class="side-nav">
+                    <div class="side-logo">S<span>●</span></div>
+                    <a class="nav-item active" title="Tổng quan"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></a>
+                    <a class="nav-item" title="Quản lý Lớp học"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></a>
+                    <a class="nav-item" title="Thư viện Đề thi"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></a>
+                    <a class="nav-item" title="Ngân hàng câu hỏi SGK"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16h8"/></svg></a>
+                    <a class="nav-item" title="Trộn đề thi BGD"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 14 4 4-4 4M18 2l4 4-4 4M2 18h2.5a5 5 0 0 0 4-2l7-10a5 5 0 0 1 4-2H22M2 6h2.5a5 5 0 0 1 4 2l1.5 2M15 16l.5 1a5 5 0 0 0 4 2H22"/></svg></a>
+                    <a class="nav-item" title="Lịch giảng dạy"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></a>
+                    <a class="nav-item" title="Đồng bộ Firebase"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 17a4 4 0 0 0 0-8h-1a7 7 0 0 0-13.5 2A3.5 3.5 0 0 0 7 18h12"/></svg></a>
+                    <div class="nav-spacer"></div>
+                    <a class="nav-item" title="Cài đặt hệ thống"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.5 1.1-1.5 2.6-1.8-.7a8 8 0 0 1-1.7 1l-.3 1.9h-3l-.3-1.9a8 8 0 0 1-1.7-1l-1.8.7-1.5-2.6 1.5-1.1a8 8 0 0 1 0-2l-1.5-1.1 1.5-2.6 1.8.7a8 8 0 0 1 1.7-1L12.7 7h3l.3 1.9a8 8 0 0 1 1.7 1l1.8-.7 1.5 2.6-1.5 1.1a8 8 0 0 1 0 2Z" transform="translate(-2 -2)"/></svg></a>
+                    <a class="nav-item" title="Đăng xuất" onclick="switchView('login', document.querySelectorAll('.preview-btn')[0])"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                </aside>
+
+                <!-- Vùng làm việc chính -->
+                <main class="main-content">
+                    <header class="topbar">
+                        <div class="topbar-title">
+                            <h1>Xin chào, Thầy Hùng! 👋</h1>
+                            <p>Trường THCS Đăk Ơ • Năm học 2025–2026 • Đang quản lý 4 lớp học</p>
+                        </div>
+                        <div class="topbar-actions">
+                            <div class="search-pill">
+                                <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg>
+                                <input type="text" placeholder="Tìm lớp, đề thi, ngân hàng SGK...">
+                            </div>
+                            <div class="badge-cloud">
+                                ☁️ Firebase Realtime
+                            </div>
+                            <div class="avatar-circle" title="Thầy Hùng">
+                                👨‍🏫
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="dashboard-grid">
+                        <!-- Cột trung tâm -->
+                        <div>
+                            <!-- 4 Quick Cards lớn Pastel -->
+                            <div class="cards-grid">
+                                <div class="card-pop mint">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                                    <div>
+                                        <h3>Lớp học của tôi</h3>
+                                        <p>4 lớp phụ trách • 142 học sinh • 6 bài đã giao</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+
+                                <div class="card-pop pink">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                    <div>
+                                        <h3>Thư viện đề thi</h3>
+                                        <p>18 đề kiểm tra • Tự luận &amp; Trắc nghiệm</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+
+                                <div class="card-pop yellow">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16h8"/></svg></div>
+                                    <div>
+                                        <h3>Ngân hàng câu hỏi</h3>
+                                        <p>SGK Kết nối tri thức, Cánh Diều, Chân trời</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+
+                                <div class="card-pop lavender">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 14 4 4-4 4M18 2l4 4-4 4M2 18h2.5a5 5 0 0 0 4-2l7-10a5 5 0 0 1 4-2H22M2 6h2.5a5 5 0 0 1 4 2l1.5 2M15 16l.5 1a5 5 0 0 0 4 2H22"/></svg></div>
+                                    <div>
+                                        <h3>Trộn đề thi BGD</h3>
+                                        <p>Bóc tách 4 phần, MathType &amp; ChemDraw</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+                            </div>
+
+                            <!-- Thống kê 3 ô -->
+                            <div class="section-header">
+                                <h2>Tổng quan học tập</h2>
+                                <a href="#">Xem chi tiết →</a>
+                            </div>
+                            <div class="stats-row">
+                                <div class="stat-box s-mint">
+                                    <span>Lớp học quản lý</span>
+                                    <b>04</b>
+                                </div>
+                                <div class="stat-box s-yellow">
+                                    <span>Đề đã xuất bản</span>
+                                    <b>18</b>
+                                </div>
+                                <div class="stat-box s-purple">
+                                    <span>Tự luận chờ chấm</span>
+                                    <b style="color: #9333ea;">03 <span style="font-size:14px;font-weight:700;">bài</span></b>
+                                </div>
+                            </div>
+
+                            <!-- Hoạt động gần đây -->
+                            <div class="panel-white">
+                                <h3>
+                                    Hoạt động bài nộp gần đây
+                                    <span style="font-size:12px; font-weight:600; color:var(--sp-muted);">Tự động đồng bộ</span>
+                                </h3>
+                                <div class="activity-item">
+                                    <div class="activity-left">
+                                        <div class="activity-icon" style="background:#e0f2fe; color:#0284c7;">📝</div>
+                                        <div>
+                                            <div class="activity-title">Kiểm tra giữa kỳ 1 — Môn Toán 9</div>
+                                            <div class="activity-sub">Lớp 9A1 • Đã nộp 38/40 bài • 15 phút trước</div>
+                                        </div>
+                                    </div>
+                                    <span class="status-chip green">Đã thu bài</span>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-left">
+                                        <div class="activity-icon" style="background:#fce7f3; color:#db2777;">📷</div>
+                                        <div>
+                                            <div class="activity-title">Bài tập tự luận Tuần 11 — KHTN 8</div>
+                                            <div class="activity-sub">Học sinh Lê Thị Mai vừa chụp ảnh nộp Phần IV</div>
+                                        </div>
+                                    </div>
+                                    <span class="status-chip amber">Chờ chấm</span>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-left">
+                                        <div class="activity-icon" style="background:#f3e8ff; color:#7e22ce;">🎮</div>
+                                        <div>
+                                            <div class="activity-title">Phòng Live Game: Đấu trường Tri Ân 20/11</div>
+                                            <div class="activity-sub">Lớp 8A5 • Tranh ghép Pixel Art 24x24</div>
+                                        </div>
+                                    </div>
+                                    <span class="status-chip blue">Mã: 8A5-LIVE</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cột phụ bên phải: Lịch & Tiến độ -->
+                        <div>
+                            <!-- Lịch giảng dạy & Kiểm tra -->
+                            <div class="panel-white">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                                    <h3 style="margin:0;">Lịch kiểm tra</h3>
+                                    <span style="font-size:13px; font-weight:800; color:#334155;">Tháng 11 / 2026</span>
+                                </div>
+                                <div class="calendar-grid">
+                                    <div class="calendar-cell weekday">T2</div>
+                                    <div class="calendar-cell weekday">T3</div>
+                                    <div class="calendar-cell weekday">T4</div>
+                                    <div class="calendar-cell weekday">T5</div>
+                                    <div class="calendar-cell weekday">T6</div>
+                                    <div class="calendar-cell weekday">T7</div>
+                                    <div class="calendar-cell weekday">CN</div>
+                                    
+                                    <div class="calendar-cell"></div>
+                                    <div class="calendar-cell"></div>
+                                    <div class="calendar-cell"></div>
+                                    <div class="calendar-cell"></div>
+                                    <div class="calendar-cell"></div>
+                                    <div class="calendar-cell">1</div>
+                                    <div class="calendar-cell">2</div>
+                                    
+                                    <div class="calendar-cell highlight">3</div>
+                                    <div class="calendar-cell">4</div>
+                                    <div class="calendar-cell">5</div>
+                                    <div class="calendar-cell">6</div>
+                                    <div class="calendar-cell">7</div>
+                                    <div class="calendar-cell">8</div>
+                                    <div class="calendar-cell">9</div>
+                                    
+                                    <div class="calendar-cell">10</div>
+                                    <div class="calendar-cell">11</div>
+                                    <div class="calendar-cell highlight">12</div>
+                                    <div class="calendar-cell">13</div>
+                                    <div class="calendar-cell">14</div>
+                                    <div class="calendar-cell">15</div>
+                                    <div class="calendar-cell">16</div>
+                                    
+                                    <div class="calendar-cell">17</div>
+                                    <div class="calendar-cell">18</div>
+                                    <div class="calendar-cell">19</div>
+                                    <div class="calendar-cell today">20</div>
+                                    <div class="calendar-cell">21</div>
+                                    <div class="calendar-cell">22</div>
+                                    <div class="calendar-cell">23</div>
+                                    
+                                    <div class="calendar-cell">24</div>
+                                    <div class="calendar-cell">25</div>
+                                    <div class="calendar-cell">26</div>
+                                    <div class="calendar-cell">27</div>
+                                    <div class="calendar-cell highlight">28</div>
+                                    <div class="calendar-cell">29</div>
+                                    <div class="calendar-cell">30</div>
+                                </div>
+                            </div>
+
+                            <!-- Tiến độ đánh giá tháng (Ngày 30) -->
+                            <div class="panel-white">
+                                <h3>Đánh giá tiến bộ định kỳ</h3>
+                                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; color:#334155;">
+                                    <span>Kỳ chốt ngày 30/11</span>
+                                    <span style="color:#0E766E;">86% đã nộp</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar-fill" style="width: 86%;"></div>
+                                </div>
+                                <p style="font-size:12px; color:var(--sp-muted); line-height:1.5; margin-top:8px;">
+                                    Hệ thống tự động so sánh kết quả từng học sinh và hỗ trợ xuất báo cáo Excel (.xlsx) gửi ban giám hiệu.
+                                </p>
+                            </div>
+
+                            <!-- Kho dữ liệu đám mây -->
+                            <div class="panel-white" style="background: #F8FAFC;">
+                                <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:13px; color:#334155;">
+                                    <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 17a4 4 0 0 0 0-8h-1a7 7 0 0 0-13.5 2A3.5 3.5 0 0 0 7 18h12"/></svg> Mã kho: <span style="color:#0E766E; font-family:monospace;">h2v8xsmc...</span>
+                                </div>
+                                <div style="font-size:11.5px; color:#64748b; margin-top:4px;">
+                                    Mọi thiết bị giáo viên và học sinh đã đồng bộ qua Firebase Realtime.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- MÀN HÌNH 3: DASHBOARD HỌC SINH (STUDENT DASHBOARD) -->
+            <!-- ============================================================== -->
+            <div id="view-student" class="view-pane">
+                <!-- Sidebar nhỏ gọn -->
+                <aside class="side-nav">
+                    <div class="side-logo">S<span>●</span></div>
+                    <a class="nav-item active" title="Bàn học của tôi"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/></svg></a>
+                    <a class="nav-item" title="Bài tập được giao"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></a>
+                    <a class="nav-item" title="Tự luyện SGK"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16h8"/></svg></a>
+                    <a class="nav-item" title="Kết quả &amp; Nhận xét"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8.2 12-1 9 4.8-2.5 4.8 2.5-1-9"/></svg></a>
+                    <a class="nav-item" title="Đấu trường Live Game"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><path d="M7 6h10a5 5 0 0 1 5 5v4a3 3 0 0 1-5 2l-2-2H9l-2 2a3 3 0 0 1-5-2v-4a5 5 0 0 1 5-5Z"/></svg></a>
+                    <div class="nav-spacer"></div>
+                    <a class="nav-item" title="Đăng xuất" onclick="switchView('login', document.querySelectorAll('.preview-btn')[0])"><svg class="w-5 h-5" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                </aside>
+
+                <main class="main-content">
+                    <header class="topbar">
+                        <div class="topbar-title">
+                            <h1>Chào bạn, Hoàng Minh! ✨</h1>
+                            <p>Học sinh lớp 8A5 • Trường THCS Đăk Ơ • Hôm nay có 2 bài tập cần nộp</p>
+                        </div>
+                        <div class="topbar-actions">
+                            <div class="search-pill">
+                                <svg class="w-4 h-4" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="m16 16 5 5"/></svg>
+                                <input type="text" placeholder="Tìm bài học, bài kiểm tra...">
+                            </div>
+                            <div class="mascot-box" style="padding: 6px 14px; border-radius: 999px; box-shadow:none;">
+                                <span style="font-size:22px;">🐱</span>
+                                <span style="font-size:12px; font-weight:800; color:#334155;">Chúc em học tốt!</span>
+                            </div>
+                            <div class="avatar-circle" style="background:var(--sp-mint);" title="Nguyễn Hoàng Minh">
+                                🎒
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="dashboard-grid">
+                        <!-- Cột trung tâm học sinh -->
+                        <div>
+                            <!-- 4 Cards học sinh -->
+                            <div class="cards-grid">
+                                <div class="card-pop mint">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></div>
+                                    <div>
+                                        <h3>Bài tập của tôi</h3>
+                                        <p>2 bài tập cần hoàn thành trước ngày 22/11</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+
+                                <div class="card-pop yellow">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16h8"/></svg></div>
+                                    <div>
+                                        <h3>Tự luyện theo SGK</h3>
+                                        <p>Kho trắc nghiệm &amp; tự luận Toán, KHTN, Sử, Địa</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+
+                                <div class="card-pop pink">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8.2 12-1 9 4.8-2.5 4.8 2.5-1-9"/></svg></div>
+                                    <div>
+                                        <h3>Kết quả học tập</h3>
+                                        <p>Xem điểm số &amp; nhận xét của thầy cô theo tháng</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+
+                                <div class="card-pop lavender">
+                                    <div class="card-pop-icon"><svg class="w-7 h-7" stroke-width="2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/><path d="M7 6h10a5 5 0 0 1 5 5v4a3 3 0 0 1-5 2l-2-2H9l-2 2a3 3 0 0 1-5-2v-4a5 5 0 0 1 5-5Z"/></svg></div>
+                                    <div>
+                                        <h3>Đấu trường trực tiếp</h3>
+                                        <p>Tham gia phòng Live Game ghép tranh Pixel Art</p>
+                                    </div>
+                                    <div class="card-go-btn">↗</div>
+                                </div>
+                            </div>
+
+                            <!-- Bài tập cần làm ngay -->
+                            <div class="panel-white" style="border-left: 5px solid #48BFA8;">
+                                <div style="display:flex; justify-content:space-between; align-items:center;">
+                                    <div>
+                                        <span class="status-chip amber">Hạn chót: 22h00 Ngày mai</span>
+                                        <h3 style="font-size:18px; margin: 8px 0 4px;">Đề ôn tập Chương 2 — Môn Toán 8</h3>
+                                        <p style="font-size:13px; color:var(--sp-muted); margin:0;">
+                                            Gồm 20 câu trắc nghiệm (Phần I, II, III) và 1 câu tự luận chụp ảnh (Phần IV).
+                                        </p>
+                                    </div>
+                                    <button class="btn-submit" style="width:auto; padding:10px 22px; font-size:13px; margin:0;">
+                                        ✍️ VÀO LÀM BÀI
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Vinh danh Top 5 Học sinh Tiêu biểu -->
+                            <div class="panel-white">
+                                <h3>
+                                    🏆 Bảng Vinh Danh Tuần — Lớp 8A5
+                                    <span style="font-size:12px; font-weight:600; color:var(--sp-muted);">Tuần 11</span>
+                                </h3>
+                                <div class="activity-item">
+                                    <div class="activity-left">
+                                        <span style="font-size:20px;">🥇</span>
+                                        <div>
+                                            <div class="activity-title">Lê Thị Mai</div>
+                                            <div class="activity-sub">Điểm trung bình: 10.0 • 12 bài nộp</div>
+                                        </div>
+                                    </div>
+                                    <span class="status-chip green">Thủ khoa tuần</span>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-left">
+                                        <span style="font-size:20px;">🥈</span>
+                                        <div>
+                                            <div class="activity-title">Nguyễn Hoàng Minh (Bạn)</div>
+                                            <div class="activity-sub">Điểm trung bình: 9.8 • 11 bài nộp</div>
+                                        </div>
+                                    </div>
+                                    <span class="status-chip blue">Á khoa 1</span>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-left">
+                                        <span style="font-size:20px;">🥉</span>
+                                        <div>
+                                            <div class="activity-title">Trần Văn Nam</div>
+                                            <div class="activity-sub">Điểm trung bình: 9.5 • 10 bài nộp</div>
+                                        </div>
+                                    </div>
+                                    <span class="status-chip amber">Á khoa 2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cột phải học sinh -->
+                        <div>
+                            <!-- Nhận xét của Thầy Cô theo tháng -->
+                            <div class="panel-white" style="background:#FFFDF7; border-color:#FDE68A;">
+                                <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+                                    <span style="font-size:20px;">💬</span>
+                                    <h3 style="margin:0; font-size:16px; color:#92400E;">Nhận xét của Thầy Hùng</h3>
+                                </div>
+                                <div style="font-size:13px; line-height:1.6; color:#78350F; background:#FEF3C7; padding:12px 14px; border-radius:14px;">
+                                    "Minh làm bài trắc nghiệm rất chắc chắn. Phần tự luận đã biết trình bày từng bước rõ ràng, chữ viết sạch đẹp. Cố gắng phát huy ở đợt thi học kỳ sắp tới nhé!"
+                                </div>
+                                <div style="text-align:right; font-size:11px; font-weight:700; color:#B45309; margin-top:6px;">
+                                    Kỳ nhận xét: Tháng 11/2026
+                                </div>
+                            </div>
+
+                            <!-- Tiến độ ôn luyện cá nhân -->
+                            <div class="panel-white">
+                                <h3>Mục tiêu tuần này</h3>
+                                <div style="display:flex; justify-content:space-between; font-size:13px; font-weight:700; color:#334155;">
+                                    <span>Hoàn thành 4/5 bài tập</span>
+                                    <span style="color:#0E766E;">80%</span>
+                                </div>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar-fill" style="width: 80%;"></div>
+                                </div>
+                                <div style="display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;">
+                                    <span class="status-chip green">🏅 Toán 8: Xuất sắc</span>
+                                    <span class="status-chip blue">🔬 KHTN 8: Chăm chỉ</span>
+                                    <span class="status-chip amber">🎮 Pixel Art: Top 1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function switchView(viewName, btnEl) {
+            document.querySelectorAll('.view-pane').forEach(el => {
+                el.classList.remove('active');
+            });
+            const target = document.getElementById('view-' + viewName);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            if (btnEl) {
+                document.querySelectorAll('.preview-btn').forEach(b => b.classList.remove('active'));
+                btnEl.classList.add('active');
+            }
+        }
+
+        function setScreenMode(mode, btnEl) {
+            const wrap = document.getElementById('stageWrapper');
+            if (mode === 'mobile') {
+                wrap.classList.add('mobile-mode');
+            } else {
+                wrap.classList.remove('mobile-mode');
+            }
+            document.querySelectorAll('.resp-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+        }
+
+        function setLoginRole(role) {
+            const tabGv = document.getElementById('role-tab-gv');
+            const tabHs = document.getElementById('role-tab-hs');
+            const formGv = document.getElementById('form-gv');
+            const formHs = document.getElementById('form-hs');
+
+            if (role === 'gv') {
+                tabGv.classList.add('active');
+                tabHs.classList.remove('active');
+                formGv.style.display = 'block';
+                formHs.style.display = 'none';
+            } else {
+                tabHs.classList.add('active');
+                tabGv.classList.remove('active');
+                formHs.style.display = 'block';
+                formGv.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
