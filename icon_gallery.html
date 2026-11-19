@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolPop 2026 — Bảng Duyệt Icon Phosphor (Icon Gallery)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons Web v2.1.1 CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+    <style>
+        :root {
+            --sp-bg: #F4F8F8;
+            --sp-surface: #FFFFFF;
+            --sp-text: #191D2B;
+            --sp-muted: #64748B;
+            --sp-border: #E6EDF0;
+            --sp-accent: #191D2B;
+            
+            /* Pastel Tokens - Phương Án B */
+            --sp-mint-bg: #D4ECE8;
+            --sp-mint-icon: #168C81;
+            
+            --sp-pink-bg: #F9D7E8;
+            --sp-pink-icon: #B9467B;
+            
+            --sp-yellow-bg: #FFE8AA;
+            --sp-yellow-icon: #A56E11;
+            
+            --sp-lavender-bg: #E5D9F5;
+            --sp-lavender-icon: #7950AA;
+
+            --sp-blue-bg: #DCEBF9;
+            --sp-blue-icon: #2F6DA4;
+
+            --sp-radius-card: 20px;
+            --sp-radius-box: 16px;
+            --sp-radius-pill: 999px;
+            --sp-shadow: 0 12px 36px rgba(25, 29, 43, 0.05);
+            --sp-shadow-hover: 0 16px 40px rgba(25, 29, 43, 0.09);
+            --sp-speed: 200ms;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Be Vietnam Pro', 'Nunito', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(circle at 92% 10%, #fadce9 0 14%, transparent 15%),
+                        radial-gradient(circle at 8% 90%, #d5ebe6 0 18%, transparent 19%),
+                        var(--sp-bg);
+            color: var(--sp-text);
+            min-height: 100vh;
+            padding: 36px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+        }
+
+        /* Top Header Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--sp-text);
+            font-size: 14px;
+            font-weight: 700;
+            background: var(--sp-surface);
+            padding: 10px 18px;
+            border-radius: var(--sp-radius-pill);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            border: 1px solid var(--sp-border);
+            transition: all var(--sp-speed);
+        }
+
+        .back-link:hover {
+            transform: translateX(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .action-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: var(--sp-radius-pill);
+            font-size: 13.5px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all var(--sp-speed);
+        }
+
+        .btn-dark {
+            background: var(--sp-accent);
+            color: #fff;
+        }
+
+        .btn-dark:hover {
+            background: #2a3346;
+            transform: translateY(-2px);
+        }
+
+        .btn-mint {
+            background: #48BFA8;
+            color: #fff;
+        }
+
+        .btn-mint:hover {
+            background: #3ba893;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Showcase Header */
+        .hero-header {
+            background: var(--sp-surface);
+            border-radius: 28px;
+            padding: 36px 40px;
+            box-shadow: var(--sp-shadow);
+            border: 1px solid rgba(220, 230, 235, 0.7);
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-header::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(212, 236, 232, 0.6) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #D4ECE8;
+            color: #168C81;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 6px 14px;
+            border-radius: var(--sp-radius-pill);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: var(--sp-text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-desc {
+            font-size: 15px;
+            color: var(--sp-muted);
+            max-width: 860px;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .hero-metrics {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .metric-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #F8FAFB;
+            border: 1px solid var(--sp-border);
+            padding: 8px 16px;
+            border-radius: var(--sp-radius-pill);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sp-text);
+        }
+
+        .metric-pill i {
+            font-size: 18px;
+        }
+
+        /* Filter & Controls Bar */
+        .controls-card {
+            background: var(--sp-surface);
+            border-radius: 20px;
+            padding: 16px 24px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--sp-border);
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            position: sticky;
+            top: 16px;
+            z-index: 100;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: var(--sp-radius-pill);
+            border: 1px solid transparent;
+            background: #F1F5F7;
+            color: var(--sp-muted);
+            cursor: pointer;
+            transition: all var(--sp-speed);
+        }
+
+        .filter-btn:hover {
+            background: #E2E8F0;
+            color: var(--sp-text);
+        }
+
+        .filter-btn.active {
+            background: var(--sp-accent);
+            color: #ffffff;
+            border-color: var(--sp-accent);
+            box-shadow: 0 4px 12px rgba(25, 29, 43, 0.15);
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 260px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+            font-size: 18px;
+        }
+
+        .search-box input {
+            width: 100%;
+            font-family: inherit;
+            font-size: 13.5px;
+            padding: 9px 16px 9px 40px;
+            border-radius: var(--sp-radius-pill);
+            border: 1px solid var(--sp-border);
+            outline: none;
+            background: #F8FAFB;
+            transition: all var(--sp-speed);
+        }
+
+        .search-box input:focus {
+            background: #fff;
+            border-color: #168C81;
+            box-shadow: 0 0 0 3px rgba(22, 140, 129, 0.12);
+        }
+
+        /* Section Layouts */
+        .section-header {
+            margin-bottom: 20px;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--sp-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-tag {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: var(--sp-radius-pill);
+            background: #E2E8F0;
+            color: #475569;
+        }
+
+        /* Icon Grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Icon Card - Pastel Minimal Style */
+        .icon-card {
+            background: var(--sp-surface);
+            border-radius: var(--sp-radius-card);
+            padding: 22px;
+            border: 1px solid var(--sp-border);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: all var(--sp-speed) cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sp-shadow-hover);
+            border-color: #CBD5E1;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        /* Pastel Icon Containers */
+        .icon-box {
+            width: 58px;
+            height: 58px;
+            border-radius: var(--sp-radius-box);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            transition: transform var(--sp-speed);
+        }
+
+        .icon-card:hover .icon-box {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        .box-mint {
+            background: var(--sp-mint-bg);
+            color: var(--sp-mint-icon);
+        }
+
+        .box-pink {
+            background: var(--sp-pink-bg);
+            color: var(--sp-pink-icon);
+        }
+
+        .box-yellow {
+            background: var(--sp-yellow-bg);
+            color: var(--sp-yellow-icon);
+        }
+
+        .box-lavender {
+            background: var(--sp-lavender-bg);
+            color: var(--sp-lavender-icon);
+        }
+
+        .box-blue {
+            background: var(--sp-blue-bg);
+            color: var(--sp-blue-icon);
+        }
+
+        .box-ink {
+            background: #F1F5F9;
+            color: #191D2B;
+        }
+
+        .weight-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: #F1F5F9;
+            color: #475569;
+            text-transform: uppercase;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .function-name {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--sp-text);
+            line-height: 1.3;
+        }
+
+        .icon-identifier {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 600;
+            color: #0284C7;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .icon-rationale {
+            font-size: 13.5px;
+            color: var(--sp-muted);
+            line-height: 1.5;
+            background: #F8FAFB;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border-left: 3px solid #CBD5E1;
+        }
+
+        .color-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            padding-top: 8px;
+            border-top: 1px dashed var(--sp-border);
+            color: #64748B;
+        }
+
+        .color-preview {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .btn-copy {
+            font-family: inherit;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: #F1F5F9;
+            border: 1px solid #E2E8F0;
+            color: #334155;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all var(--sp-speed);
+        }
+
+        .btn-copy:hover {
+            background: var(--sp-accent);
+            color: #fff;
+        }
+
+        /* Comparison & Live Demo Section */
+        .live-preview-section {
+            background: var(--sp-surface);
+            border-radius: 28px;
+            padding: 36px 40px;
+            border: 1px solid var(--sp-border);
+            box-shadow: var(--sp-shadow);
+            margin-bottom: 40px;
+        }
+
+        .mock-dashboard {
+            background: #F3F9F8;
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid #DFEBE8;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .mock-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 20px;
+            border: 1px solid #E6ECEE;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: 0 4px 12px rgba(36, 60, 65, 0.04);
+            cursor: pointer;
+            transition: all var(--sp-speed);
+        }
+
+        .mock-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(36, 60, 65, 0.08);
+        }
+
+        .mock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mock-stat {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--sp-text);
+        }
+
+        .mock-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: #334155;
+        }
+
+        .mock-sub {
+            font-size: 12px;
+            color: #64748B;
+        }
+
+        /* Bottom Floating Bar */
+        .approval-dock {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(25, 29, 43, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: var(--sp-radius-pill);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .approval-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: #191D2B;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+            opacity: 0;
+            transform: translateY(-12px);
+            transition: all var(--sp-speed);
+            z-index: 999999;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-header { padding: 24px; }
+            .hero-title { font-size: 22px; }
+            .icon-grid { grid-template-columns: 1fr; }
+            .approval-dock { width: 90%; flex-direction: column; text-align: center; border-radius: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Navigation Bar -->
+        <header class="top-nav">
+            <a href="demo_schoolpop_phuong_an_b.html" class="back-link">
+                <i class="ph ph-arrow-left"></i> Xem Demo Dashboard Phương Án B
+            </a>
+            <div class="action-links">
+                <a href="index.html" class="btn-pill btn-dark">
+                    <i class="ph ph-house-line"></i> Về Trang Chính (index.html)
+                </a>
+                <button onclick="window.print()" class="btn-pill" style="background:#fff; border:1px solid var(--sp-border); color:var(--sp-text);">
+                    <i class="ph ph-printer"></i> In / Xuất PDF
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-header">
+            <div class="hero-badge">
+                <i class="ph-bold ph-sparkle"></i> Thiết Kế Chuẩn: Pastel Minimal Dashboard (Phương Án B)
+            </div>
+            <h1 class="hero-title">
+                SchoolPop 2026 — Bảng Duyệt Icon Phosphor Toàn Hệ Thống
+            </h1>
+            <p class="hero-desc">
+                Bảng đề xuất và trực quan hóa chi tiết 100% bộ icon chính thức cho hệ thống <strong>Quản Lý & Giao Đề Thi Tự Học 2026</strong>. 
+                Sử dụng thư viện <strong>Phosphor Icons Web (MIT License)</strong> với quy tắc: 
+                <span style="color:#168C81; font-weight:700;">Duotone</span> cho thẻ chức năng chính & thành tích học tập, 
+                <span style="color:#191D2B; font-weight:700;">Regular</span> cho thanh menu sidebar, bảng biểu và thanh công cụ điều khiển.
+            </p>
+            <div class="hero-metrics">
+                <div class="metric-pill">
+                    <i class="ph-duotone ph-palette" style="color:#168C81;"></i> 4 Tone Màu Pastel: Mint, Pink, Yellow, Lavender
+                </div>
+                <div class="metric-pill">
+                    <i class="ph-duotone ph-shapes" style="color:#B9467B;"></i> 2 Trọng Lực: Duotone (Thẻ) & Regular (Menu)
+                </div>
+                <div class="metric-pill">
+                    <i class="ph-duotone ph-shield-check" style="color:#A56E11;"></i> Bảo Lưu 100% Logic, ID & Firebase RTDB
+                </div>
+                <div class="metric-pill">
+                    <i class="ph-duotone ph-user-check" style="color:#7950AA;"></i> Dành Cho Thầy Hùng Duyệt Trước Khi Triển Khai
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter & Search Bar -->
+        <div class="controls-card">
+            <div class="filter-tabs">
+                <button class="filter-btn active" onclick="filterGroup('all', this)">Tất Cả (26 Icons)</button>
+                <button class="filter-btn" onclick="filterGroup('teacher', this)">1. Thẻ Giáo Viên</button>
+                <button class="filter-btn" onclick="filterGroup('student', this)">2. Thẻ Học Sinh</button>
+                <button class="filter-btn" onclick="filterGroup('sidebar', this)">3. Sidebar Menu</button>
+                <button class="filter-btn" onclick="filterGroup('utility', this)">4. Tiện Ích & Thao Tác</button>
+            </div>
+            <div class="search-box">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Tìm icon theo tên, chức năng..." oninput="searchIcons()">
+            </div>
+        </div>
+
+        <!-- GROUP 1: THẺ CHỨC NĂNG GIÁO VIÊN -->
+        <div class="section-header group-teacher">
+            <h2 class="section-title">
+                <i class="ph-duotone ph-chalkboard-teacher" style="color:#168C81;"></i>
+                1. Thẻ Chức Năng Giáo Viên (Teacher Functional Cards)
+            </h2>
+            <span class="section-tag">Trọng lực: Duotone 30px | Nền hộp Pastel</span>
+        </div>
+        <div class="icon-grid group-teacher">
+
+            <!-- Card 1 -->
+            <div class="icon-card" data-keywords="lớp học của tôi users three danh sách học sinh quản lý lớp">
+                <div class="card-top">
+                    <div class="icon-box box-mint">
+                        <i class="ph-duotone ph-users-three"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Lớp học của tôi</h3>
+                    <div class="icon-identifier">
+                        <span>ph-users-three</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-users-three')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Bộ ba nhân vật học sinh / giáo viên đại diện cho tập thể lớp học, mang lại cảm giác thân thiện, gắn kết sư phạm hơn icon người đơn lẻ thông thường.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#D4ECE8;"></span> Mint (#D4ECE8)</div>
+                    <span style="font-weight:700; color:#168C81;">#168C81</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="icon-card" data-keywords="thư viện đề books kho tài liệu đề kiểm tra">
+                <div class="card-top">
+                    <div class="icon-box box-pink">
+                        <i class="ph-duotone ph-books"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Thư viện đề thi</h3>
+                    <div class="icon-identifier">
+                        <span>ph-books</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-books')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Chồng sách tri thức lưu trữ ngân hàng đề thi được sắp xếp bài bản, phân loại theo môn học, khối lớp và học kỳ.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#F9D7E8;"></span> Pink (#F9D7E8)</div>
+                    <span style="font-weight:700; color:#B9467B;">#B9467B</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="icon-card" data-keywords="ngân hàng câu hỏi list checks trắc nghiệm sgk">
+                <div class="card-top">
+                    <div class="icon-box box-yellow">
+                        <i class="ph-duotone ph-list-checks"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Ngân hàng câu hỏi SGK</h3>
+                    <div class="icon-identifier">
+                        <span>ph-list-checks</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-list-checks')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Danh sách câu hỏi kèm ô tích kiểm chuẩn hóa ma trận câu hỏi: Nhận biết, Thông hiểu, Vận dụng và Vận dụng cao theo SGK mới.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#FFE8AA;"></span> Yellow (#FFE8AA)</div>
+                    <span style="font-weight:700; color:#A56E11;">#A56E11</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="icon-card" data-keywords="trộn đề shuffle 4 phần bộ giáo dục hoán vị">
+                <div class="card-top">
+                    <div class="icon-box box-lavender">
+                        <i class="ph-duotone ph-shuffle"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Trộn đề 4 phần BGD</h3>
+                    <div class="icon-identifier">
+                        <span>ph-shuffle</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-shuffle')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Hai mũi tên đan chéo biểu tượng hoán vị thông minh, xáo trộn đề thi trắc nghiệm nhiều lựa chọn, đúng sai và trả lời ngắn chuẩn 2026.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#E5D9F5;"></span> Lavender (#E5D9F5)</div>
+                    <span style="font-weight:700; color:#7950AA;">#7950AA</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="icon-card" data-keywords="giao bài paper plane tilt gửi đề thi học sinh">
+                <div class="card-top">
+                    <div class="icon-box box-mint">
+                        <i class="ph-duotone ph-paper-plane-tilt"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Giao bài kiểm tra</h3>
+                    <div class="icon-identifier">
+                        <span>ph-paper-plane-tilt</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-paper-plane-tilt')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Chiếc máy bay giấy hướng lên thể hiện hành động phát đề thi tức thời qua link/mã phòng đến từng học sinh nhanh chóng, nhẹ nhàng.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#D4ECE8;"></span> Mint (#D4ECE8)</div>
+                    <span style="font-weight:700; color:#168C81;">#168C81</span>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="icon-card" data-keywords="chấm tự luận camera ảnh chụp bài làm tự luận">
+                <div class="card-top">
+                    <div class="icon-box box-pink">
+                        <i class="ph-duotone ph-camera"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Chấm tự luận bằng ảnh</h3>
+                    <div class="icon-identifier">
+                        <span>ph-camera</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-camera')"><i class="ph ph-camera"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Biểu tượng máy ảnh ống kính quang học trực quan hóa tính năng độc đáo: học sinh chụp ảnh bài làm tay và giáo viên chấm trực tiếp trên ảnh.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#F9D7E8;"></span> Pink (#F9D7E8)</div>
+                    <span style="font-weight:700; color:#B9467B;">#B9467B</span>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="icon-card" data-keywords="live game game controller thi đấu trực tiếp p2p">
+                <div class="card-top">
+                    <div class="icon-box box-lavender">
+                        <i class="ph-duotone ph-game-controller"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Live Game thi đấu P2P</h3>
+                    <div class="icon-identifier">
+                        <span>ph-game-controller</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-game-controller')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Tay cầm trò chơi điện tử hiện đại, khơi dậy tinh thần hào hứng khi cả lớp thi đấu trắc nghiệm theo thời gian thực (WebRTC / Peer-to-Peer).
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#E5D9F5;"></span> Lavender (#E5D9F5)</div>
+                    <span style="font-weight:700; color:#7950AA;">#7950AA</span>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="icon-card" data-keywords="báo cáo thống kê chart bar phổ điểm tiến độ">
+                <div class="card-top">
+                    <div class="icon-box box-yellow">
+                        <i class="ph-duotone ph-chart-bar"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Báo cáo & Phổ điểm</h3>
+                    <div class="icon-identifier">
+                        <span>ph-chart-bar</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-chart-bar')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Biểu đồ cột phân bố phổ điểm trực quan, đánh giá tỷ lệ đạt yêu cầu và theo dõi tiến độ học tập hàng tháng của từng lớp.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#FFE8AA;"></span> Yellow (#FFE8AA)</div>
+                    <span style="font-weight:700; color:#A56E11;">#A56E11</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GROUP 2: THẺ CHỨC NĂNG HỌC SINH -->
+        <div class="section-header group-student">
+            <h2 class="section-title">
+                <i class="ph-duotone ph-student" style="color:#B9467B;"></i>
+                2. Thẻ Chức Năng Học Sinh (Student Functional Cards)
+            </h2>
+            <span class="section-tag">Trọng lực: Duotone 30px | Thiết kế trẻ trung, tạo cảm hứng</span>
+        </div>
+        <div class="icon-grid group-student">
+
+            <!-- Student Card 1 -->
+            <div class="icon-card" data-keywords="tự luyện đề sgk graduation cap thi thử">
+                <div class="card-top">
+                    <div class="icon-box box-mint">
+                        <i class="ph-duotone ph-graduation-cap"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Tự luyện đề SGK mới</h3>
+                    <div class="icon-identifier">
+                        <span>ph-graduation-cap</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-graduation-cap')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Chiếc mũ cử nhân trang trọng tôn vinh tinh thần tự học, giúp học sinh chủ động ôn tập kiến thức theo từng bộ SGK mới.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#D4ECE8;"></span> Mint (#D4ECE8)</div>
+                    <span style="font-weight:700; color:#168C81;">#168C81</span>
+                </div>
+            </div>
+
+            <!-- Student Card 2 -->
+            <div class="icon-card" data-keywords="làm bài kiểm tra exam bài thi của thầy cô">
+                <div class="card-top">
+                    <div class="icon-box box-pink">
+                        <i class="ph-duotone ph-exam"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Làm bài kiểm tra của Thầy</h3>
+                    <div class="icon-identifier">
+                        <span>ph-exam</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-exam')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Tờ bài thi có tiêu đề A+ chuyên dụng trong giáo dục, thông báo học sinh cần hoàn thành bài kiểm tra 15p, 1 tiết hoặc thi kỳ.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#F9D7E8;"></span> Pink (#F9D7E8)</div>
+                    <span style="font-weight:700; color:#B9467B;">#B9467B</span>
+                </div>
+            </div>
+
+            <!-- Student Card 3 -->
+            <div class="icon-card" data-keywords="bảng vàng thành tích trophy cúp vinh danh top điểm">
+                <div class="card-top">
+                    <div class="icon-box box-yellow">
+                        <i class="ph-duotone ph-trophy"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Bảng vàng thành tích</h3>
+                    <div class="icon-identifier">
+                        <span>ph-trophy</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-trophy')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Cúp vàng vinh danh những nỗ lực học tập xuất sắc, tạo động lực thi đua học tập lành mạnh giữa các bạn trong lớp.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#FFE8AA;"></span> Yellow (#FFE8AA)</div>
+                    <span style="font-weight:700; color:#A56E11;">#A56E11</span>
+                </div>
+            </div>
+
+            <!-- Student Card 4 -->
+            <div class="icon-card" data-keywords="tiến bộ chart donut lịch sử làm bài kết quả">
+                <div class="card-top">
+                    <div class="icon-box box-lavender">
+                        <i class="ph-duotone ph-chart-donut"></i>
+                    </div>
+                    <span class="weight-badge">Duotone</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Lịch sử & Tiến bộ cá nhân</h3>
+                    <div class="icon-identifier">
+                        <span>ph-chart-donut</span>
+                        <button class="btn-copy" onclick="copyClass('ph-duotone ph-chart-donut')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Biểu đồ vòng tròn tiến độ hiện đại, hiển thị trực quan phần trăm hoàn thành mục tiêu ôn tập và chỉ số tiến bộ qua từng tuần.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#E5D9F5;"></span> Lavender (#E5D9F5)</div>
+                    <span style="font-weight:700; color:#7950AA;">#7950AA</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GROUP 3: SIDEBAR NAVIGATION -->
+        <div class="section-header group-sidebar">
+            <h2 class="section-title">
+                <i class="ph-duotone ph-sidebar" style="color:#A56E11;"></i>
+                3. Thanh Điều Hướng (Sidebar Navigation — Chuẩn Regular 22–24px)
+            </h2>
+            <span class="section-tag">Trọng lực: Regular Monochrome Ink | Active: Mint Badge</span>
+        </div>
+        <div class="icon-grid group-sidebar">
+
+            <!-- Sidebar 1 -->
+            <div class="icon-card" data-keywords="tổng quan squares four dashboard trang chủ">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-squares-four"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Tổng quan (Dashboard)</h3>
+                    <div class="icon-identifier">
+                        <span>ph-squares-four</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-squares-four')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Bốn khối vuông đối xứng hoàn hảo, biểu đạt góc nhìn bao quát toàn bộ các mảng quản lý của hệ thống trong một màn hình.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+            <!-- Sidebar 2 -->
+            <div class="icon-card" data-keywords="lớp học users three danh sách học sinh">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-users-three"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Danh sách lớp & Học sinh</h3>
+                    <div class="icon-identifier">
+                        <span>ph-users-three</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-users-three')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Đồng bộ hình tượng với thẻ tính năng, nét mảnh tối giản không gây xao nhãng trong menu điều hướng bên trái.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+            <!-- Sidebar 3 -->
+            <div class="icon-card" data-keywords="thư viện đề books kho tài liệu">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-books"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Thư viện đề thi</h3>
+                    <div class="icon-identifier">
+                        <span>ph-books</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-books')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Icon sách xếp ngay ngắn, giúp giáo viên định vị nhanh kho tài liệu và các bộ đề mẫu đã lưu trữ.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+            <!-- Sidebar 4 -->
+            <div class="icon-card" data-keywords="lịch báo giảng calendar dots thời khóa biểu">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-calendar-dots"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Lịch dạy & Báo giảng</h3>
+                    <div class="icon-identifier">
+                        <span>ph-calendar-dots</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-calendar-dots')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Lịch phân phối chương trình, nhắc nhở hạn nộp bài kiểm tra và đồng bộ lịch báo giảng của nhà trường.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+            <!-- Sidebar 5 -->
+            <div class="icon-card" data-keywords="firebase cloud check kết nối cơ sở dữ liệu">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-cloud-check"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Kết nối Firebase RTDB</h3>
+                    <div class="icon-identifier">
+                        <span>ph-cloud-check</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-cloud-check')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Đám mây tích xanh hiển thị trạng thái kết nối máy chủ thời gian thực an toàn, không lo mất dữ liệu bài thi.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+            <!-- Sidebar 6 -->
+            <div class="icon-card" data-keywords="cài đặt gear six thiết lập hệ thống">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-gear-six"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Cấu hình & Mật khẩu</h3>
+                    <div class="icon-identifier">
+                        <span>ph-gear-six</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-gear-six')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Bánh răng 6 chấu thanh thoát, nơi giáo viên tùy chỉnh mật khẩu admin cá nhân, thông tin trường và khóa bảo mật.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+            <!-- Sidebar 7 -->
+            <div class="icon-card" data-keywords="đăng xuất sign out thoát tài khoản">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-sign-out" style="color:#E11D48;"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Đăng xuất an toàn</h3>
+                    <div class="icon-identifier">
+                        <span>ph-sign-out</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-sign-out')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Cửa mở với mũi tên thoát ra, bảo vệ phiên đăng nhập trên máy tính dùng chung tại phòng hội đồng nhà trường.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#E11D48;"></span> Danger (#E11D48)</div>
+                    <span>Sidebar Icon</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GROUP 4: UTILITY & CONTROLS -->
+        <div class="section-header group-utility">
+            <h2 class="section-title">
+                <i class="ph-duotone ph-wrench" style="color:#7950AA;"></i>
+                4. Tiện Ích & Thao Tác Nghiệp Vụ (Utility & Action Controls)
+            </h2>
+            <span class="section-tag">Trọng lực: Regular 18–20px | Chuẩn thao tác ứng dụng</span>
+        </div>
+        <div class="icon-grid group-utility">
+
+            <!-- Utility 1 -->
+            <div class="icon-card" data-keywords="nhập file word file doc docx soạn thảo">
+                <div class="card-top">
+                    <div class="icon-box box-blue">
+                        <i class="ph ph-file-doc"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Nhập đề Word (.docx)</h3>
+                    <div class="icon-identifier">
+                        <span>ph-file-doc</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-file-doc')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Tài liệu văn bản có chữ DOC, trực quan hóa tính năng đọc và bóc tách đề thi Word có công thức Toán MathType/ChemDraw.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#2F6DA4;"></span> Blue (#2F6DA4)</div>
+                    <span>Action Icon</span>
+                </div>
+            </div>
+
+            <!-- Utility 2 -->
+            <div class="icon-card" data-keywords="xuất excel bảng điểm file xls kết quả">
+                <div class="card-top">
+                    <div class="icon-box box-mint">
+                        <i class="ph ph-file-xls"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Xuất bảng điểm Excel</h3>
+                    <div class="icon-identifier">
+                        <span>ph-file-xls</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-file-xls')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    File bảng tính XLS, xuất danh sách học sinh và phân tích chi tiết câu đúng sai để báo cáo ban giám hiệu.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#168C81;"></span> Mint (#168C81)</div>
+                    <span>Action Icon</span>
+                </div>
+            </div>
+
+            <!-- Utility 3 -->
+            <div class="icon-card" data-keywords="đồng hồ đếm ngược clock countdown thời gian làm bài">
+                <div class="card-top">
+                    <div class="icon-box box-pink">
+                        <i class="ph ph-clock-countdown"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Đồng hồ đếm ngược</h3>
+                    <div class="icon-identifier">
+                        <span>ph-clock-countdown</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-clock-countdown')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Đồng hồ có mũi tên hồi chuyển hiển thị thời gian còn lại trong bài thi, tự động khóa bài khi hết giờ.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#B9467B;"></span> Pink (#B9467B)</div>
+                    <span>Timer Icon</span>
+                </div>
+            </div>
+
+            <!-- Utility 4 -->
+            <div class="icon-card" data-keywords="quét mã qr code phòng thi tham gia">
+                <div class="card-top">
+                    <div class="icon-box box-lavender">
+                        <i class="ph ph-qr-code"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Mã QR vào phòng thi</h3>
+                    <div class="icon-identifier">
+                        <span>ph-qr-code</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-qr-code')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Mã phản hồi nhanh 2D, học sinh chỉ cần giơ camera điện thoại quét là vào ngay bài thi mà không cần gõ link phức tạp.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#7950AA;"></span> Lavender (#7950AA)</div>
+                    <span>QR Control</span>
+                </div>
+            </div>
+
+            <!-- Utility 5 -->
+            <div class="icon-card" data-keywords="thông báo chuông bell tin nhắn bài mới">
+                <div class="card-top">
+                    <div class="icon-box box-yellow">
+                        <i class="ph ph-bell"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Chuông thông báo</h3>
+                    <div class="icon-identifier">
+                        <span>ph-bell</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-bell')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Chiếc chuông rung thông báo bài kiểm tra mới, hạn chót nộp bài tự luận và tin nhắn từ giáo viên bộ môn.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#A56E11;"></span> Yellow (#A56E11)</div>
+                    <span>Notify Icon</span>
+                </div>
+            </div>
+
+            <!-- Utility 6 -->
+            <div class="icon-card" data-keywords="khóa bảo mật lock key mật khẩu admin">
+                <div class="card-top">
+                    <div class="icon-box box-ink">
+                        <i class="ph ph-lock-key"></i>
+                    </div>
+                    <span class="weight-badge">Regular</span>
+                </div>
+                <div class="card-info">
+                    <h3 class="function-name">Bảo mật & Đổi mã Admin</h3>
+                    <div class="icon-identifier">
+                        <span>ph-lock-key</span>
+                        <button class="btn-copy" onclick="copyClass('ph ph-lock-key')"><i class="ph ph-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <p class="icon-rationale">
+                    Ổ khóa kết hợp chìa khóa an toàn, thể hiện tính năng phân quyền: chỉ giáo viên có mật khẩu mới quản lý được ngân hàng đề.
+                </p>
+                <div class="color-meta">
+                    <div class="color-preview"><span class="swatch" style="background:#191D2B;"></span> Ink (#191D2B)</div>
+                    <span>Security Icon</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LIVE DASHBOARD PREVIEW SIMULATOR -->
+        <section class="live-preview-section">
+            <div class="hero-badge" style="background:#E5D9F5; color:#7950AA;">
+                <i class="ph-duotone ph-eye"></i> Trực Quan Hóa Thực Tế
+            </div>
+            <h2 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">
+                Mô Phỏng Trực Quan Bộ Icon Trong Giao Diện Phương Án B
+            </h2>
+            <p style="color: var(--sp-muted); font-size: 14.5px; margin-bottom: 16px;">
+                Cách các icon Duotone phối hợp hài hòa cùng thẻ pastel, tạo chiều sâu thị giác sang trọng nhưng vô cùng nhẹ nhàng, thân thiện với học đường.
+            </p>
+
+            <div class="mock-dashboard">
+                <!-- Mock 1 -->
+                <div class="mock-card">
+                    <div class="mock-header">
+                        <div class="icon-box box-mint" style="width:48px; height:48px; font-size:26px;">
+                            <i class="ph-duotone ph-users-three"></i>
+                        </div>
+                        <span class="badge" style="background:#D4ECE8; color:#168C81; font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px;">ĐANG MỞ</span>
+                    </div>
+                    <div>
+                        <div class="mock-stat">4 Lớp Học</div>
+                        <div class="mock-label">Quản lý học sinh 8A5</div>
+                        <div class="mock-sub">178 học sinh đang tự học</div>
+                    </div>
+                </div>
+
+                <!-- Mock 2 -->
+                <div class="mock-card">
+                    <div class="mock-header">
+                        <div class="icon-box box-pink" style="width:48px; height:48px; font-size:26px;">
+                            <i class="ph-duotone ph-books"></i>
+                        </div>
+                        <span class="badge" style="background:#F9D7E8; color:#B9467B; font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px;">12 ĐỀ THI</span>
+                    </div>
+                    <div>
+                        <div class="mock-stat">480 Câu</div>
+                        <div class="mock-label">Thư viện đề SGK mới</div>
+                        <div class="mock-sub">Đã chuẩn hóa 4 phần BGD</div>
+                    </div>
+                </div>
+
+                <!-- Mock 3 -->
+                <div class="mock-card">
+                    <div class="mock-header">
+                        <div class="icon-box box-yellow" style="width:48px; height:48px; font-size:26px;">
+                            <i class="ph-duotone ph-trophy"></i>
+                        </div>
+                        <span class="badge" style="background:#FFE8AA; color:#A56E11; font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px;">TOP 1</span>
+                    </div>
+                    <div>
+                        <div class="mock-stat">9.8 Điểm</div>
+                        <div class="mock-label">Bảng vàng vinh danh</div>
+                        <div class="mock-sub">Em Nguyễn Thị Mai (8A5)</div>
+                    </div>
+                </div>
+
+                <!-- Mock 4 -->
+                <div class="mock-card">
+                    <div class="mock-header">
+                        <div class="icon-box box-lavender" style="width:48px; height:48px; font-size:26px;">
+                            <i class="ph-duotone ph-game-controller"></i>
+                        </div>
+                        <span class="badge" style="background:#E5D9F5; color:#7950AA; font-size:11px; font-weight:800; padding:4px 8px; border-radius:999px;">P2P LIVE</span>
+                    </div>
+                    <div>
+                        <div class="mock-stat">36 Trận</div>
+                        <div class="mock-label">Đấu trường trực tiếp</div>
+                        <div class="mock-sub">Kết nối không độ trễ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Floating Approval Bar for Thầy Hùng -->
+    <div class="approval-dock">
+        <div class="approval-text">
+            <i class="ph-duotone ph-check-circle" style="color:#48BFA8; font-size:22px;"></i>
+            <span>Thầy Hùng đã duyệt bộ icon này chưa?</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+            <button class="btn-pill btn-mint" onclick="confirmApproval()">
+                <i class="ph-bold ph-check"></i> Đồng Ý & Duyệt Bộ Icon
+            </button>
+            <a href="demo_schoolpop_phuong_an_b.html" class="btn-pill" style="background:rgba(255,255,255,0.15); color:#fff;">
+                <i class="ph ph-arrow-square-out"></i> Xem Demo
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="ph-bold ph-check-circle" style="color:#48BFA8; font-size:18px;"></i>
+        <span id="toast-msg">Đã sao chép class icon!</span>
+    </div>
+
+    <script>
+        // Filter groups
+        function filterGroup(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const groups = ['teacher', 'student', 'sidebar', 'utility'];
+            groups.forEach(g => {
+                const headers = document.querySelectorAll('.section-header.group-' + g);
+                const grids = document.querySelectorAll('.icon-grid.group-' + g);
+                
+                if (category === 'all' || category === g) {
+                    headers.forEach(h => h.style.display = 'flex');
+                    grids.forEach(gr => gr.style.display = 'grid');
+                } else {
+                    headers.forEach(h => h.style.display = 'none');
+                    grids.forEach(gr => gr.style.display = 'none');
+                }
+            });
+        }
+
+        // Live Search
+        function searchIcons() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.icon-card');
+            
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords') || '';
+                const text = card.innerText.toLowerCase();
+                if (!query || keywords.includes(query) || text.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Copy Class to clipboard
+        function copyClass(className) {
+            navigator.clipboard.writeText(className).then(() => {
+                showToast('Đã copy class: ' + className);
+            }).catch(() => {
+                showToast('Đã copy: ' + className);
+            });
+        }
+
+        // Toast display
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2400);
+        }
+
+        // Approval Confirmation
+        function confirmApproval() {
+            alert('Cảm ơn Thầy Hùng đã duyệt bộ Phosphor Icon theo Phương Án B! Hệ thống sẵn sàng bước tiếp theo để áp dụng đồng bộ vào mã nguồn.');
+        }
+    </script>
+</body>
+</html>
