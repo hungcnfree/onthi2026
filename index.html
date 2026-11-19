@@ -2055,7 +2055,491 @@ body.layout-portrait #tguest-note{display:none}
 .lv-o.sel{border-color:#7c3aed;background:#ede9fe}.lv-o.ok{border-color:#059669;background:#d1fae5}.lv-o.bad{border-color:#dc2626;background:#fee2e2}
 .lv-t{display:inline-block;padding:3px 12px;border-radius:99px;font-weight:900;font-size:14px}.lv-tab{padding:12px 20px;margin-bottom:8px;border-radius:16px;font-weight:900;font-size:16px;cursor:pointer;border:0;color:#475569;background:linear-gradient(180deg,#fff 0%,#e2e8f0 100%);box-shadow:0 5px 0 #94a3b8,0 9px 14px rgba(15,23,42,.18),inset 0 2px 0 rgba(255,255,255,.95);transition:transform .08s,box-shadow .08s,filter .15s}.lv-tab:hover{filter:brightness(1.04)}.lv-tab:active{transform:translateY(4px);box-shadow:0 1px 0 #94a3b8,0 3px 6px rgba(15,23,42,.18),inset 0 2px 0 rgba(255,255,255,.95)}.lv-tab.on{color:#fff;background:linear-gradient(180deg,#c4b5fd 0%,#8b5cf6 45%,#6d28d9 100%);box-shadow:0 5px 0 #4c1d95,0 9px 18px rgba(124,58,237,.5),inset 0 2px 0 rgba(255,255,255,.5);text-shadow:0 1px 2px rgba(0,0,0,.4)}
 .lv-tb{width:100%;border-collapse:collapse;background:#fff}.lv-tb th,.lv-tb td{border:1px solid #e2e8f0;padding:7px 10px;text-align:center}.lv-tb td:nth-child(2){text-align:left}.lv-tb th{background:#ede9fe}
-.lv-qt,.lv-qt *:not(.katex):not(.katex *),.lv-ot,.lv-ot *:not(.katex):not(.katex *),.lv-o,.lv-o *:not(.katex):not(.katex *),.lv-sol,.lv-sol *:not(.katex):not(.katex *),.lv-i{}.lv-qt,.lv-qt .math-content,.lv-ot,.lv-ot .math-content{font-weight:400!important;text-align:justify!important;text-justify:inter-word}.lv-qt b,.lv-ot b,.lv-o>span:first-child{font-weight:700!important}.lv-o.lk{opacity:.55;cursor:not-allowed}.lv-tag{display:inline-block;margin-left:8px;font-size:13px;font-weight:700;padding:1px 10px;border-radius:99px;background:#1e293b;color:#fff}.lv-g{display:grid;gap:8px}.lv-g.c4{grid-template-columns:repeat(4,minmax(0,1fr))}.lv-g.c2{grid-template-columns:repeat(2,minmax(0,1fr))}.lv-g.c1{grid-template-columns:minmax(0,1fr)}.lv-g .lv-o{margin:0;min-width:0}.lv-tb th,.lv-tb td{white-space:nowrap}.lv-tb td:nth-child(2){width:100%}.lv-b{white-space:nowrap}#lv-s,#lv-t,#lv-d{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.lv-o,.lv-b,.lv-i{touch-action:manipulation;-webkit-tap-highlight-color:transparent}#lv-s.guard{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#lv-s.guard input{-webkit-user-select:text;user-select:text}.lv-tag.r{background:#dc2626}.lv-i{border:2px solid #cbd5e1;border-radius:12px;padding:8px 12px;font-size:17px;font-weight:700;width:100%}.lv-tq{border-radius:18px;border:4px solid;background:#fff;overflow:hidden;text-align:center}.lv-tq h4{color:#fff;font-weight:900;font-size:20px;padding:8px 10px;word-break:break-word}.lv-qb{padding:10px;cursor:zoom-in}.lv-mem{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:4px}.lv-mem span{font-size:13px;font-weight:700;padding:1px 8px;border-radius:99px}.lv-sh-t .lv-tag{font-size:12px;vertical-align:middle}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&amp;subset=vietnamese"><style id="code99-css">#c99-wrap{position:relative;width:80px;margin:0 auto 2px;flex:none;text-align:center}#c99-ring{position:relative;width:76px;height:76px;margin:0 auto;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(37,99,235,.35);background:linear-gradient(135deg,#6366f1,#2563eb);color:#fff;font-weight:900;font-size:28px;display:flex;align-items:center;justify-content:center;overflow:hidden}#c99-ring img{width:100%;height:100%;object-fit:cover;display:block}#c99-in{position:absolute;left:0;top:0;width:76px;height:76px;margin:0;padding:0;opacity:0;cursor:pointer;border-radius:50%;z-index:3;font-size:0}#c99-cam{position:absolute;right:2px;bottom:2px;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;border:2px solid #fff;font-size:12px;line-height:1;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2}#c99-cam.ok{background:#059669}#c99-cam.bad{background:#d97706}body.layout-portrait:not(.printing-a4) #c99-wrap{width:auto;display:flex;align-items:center;gap:6px;margin:0}body.layout-portrait:not(.printing-a4) #c99-ring{width:40px;height:40px;font-size:15px;border-width:2px;margin:0}body.layout-portrait:not(.printing-a4) #c99-in{width:40px;height:40px}body.layout-portrait:not(.printing-a4) #c99-cam{display:none}</style></head>
+.lv-qt,.lv-qt *:not(.katex):not(.katex *),.lv-ot,.lv-ot *:not(.katex):not(.katex *),.lv-o,.lv-o *:not(.katex):not(.katex *),.lv-sol,.lv-sol *:not(.katex):not(.katex *),.lv-i{}.lv-qt,.lv-qt .math-content,.lv-ot,.lv-ot .math-content{font-weight:400!important;text-align:justify!important;text-justify:inter-word}.lv-qt b,.lv-ot b,.lv-o>span:first-child{font-weight:700!important}.lv-o.lk{opacity:.55;cursor:not-allowed}.lv-tag{display:inline-block;margin-left:8px;font-size:13px;font-weight:700;padding:1px 10px;border-radius:99px;background:#1e293b;color:#fff}.lv-g{display:grid;gap:8px}.lv-g.c4{grid-template-columns:repeat(4,minmax(0,1fr))}.lv-g.c2{grid-template-columns:repeat(2,minmax(0,1fr))}.lv-g.c1{grid-template-columns:minmax(0,1fr)}.lv-g .lv-o{margin:0;min-width:0}.lv-tb th,.lv-tb td{white-space:nowrap}.lv-tb td:nth-child(2){width:100%}.lv-b{white-space:nowrap}#lv-s,#lv-t,#lv-d{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}.lv-o,.lv-b,.lv-i{touch-action:manipulation;-webkit-tap-highlight-color:transparent}#lv-s.guard{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}#lv-s.guard input{-webkit-user-select:text;user-select:text}.lv-tag.r{background:#dc2626}.lv-i{border:2px solid #cbd5e1;border-radius:12px;padding:8px 12px;font-size:17px;font-weight:700;width:100%}.lv-tq{border-radius:18px;border:4px solid;background:#fff;overflow:hidden;text-align:center}.lv-tq h4{color:#fff;font-weight:900;font-size:20px;padding:8px 10px;word-break:break-word}.lv-qb{padding:10px;cursor:zoom-in}.lv-mem{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:4px}.lv-mem span{font-size:13px;font-weight:700;padding:1px 8px;border-radius:99px}.lv-sh-t .lv-tag{font-size:12px;vertical-align:middle}</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&amp;subset=vietnamese"><style id="code99-css">#c99-wrap{position:relative;width:80px;margin:0 auto 2px;flex:none;text-align:center}#c99-ring{position:relative;width:76px;height:76px;margin:0 auto;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(37,99,235,.35);background:linear-gradient(135deg,#6366f1,#2563eb);color:#fff;font-weight:900;font-size:28px;display:flex;align-items:center;justify-content:center;overflow:hidden}#c99-ring img{width:100%;height:100%;object-fit:cover;display:block}#c99-in{position:absolute;left:0;top:0;width:76px;height:76px;margin:0;padding:0;opacity:0;cursor:pointer;border-radius:50%;z-index:3;font-size:0}#c99-cam{position:absolute;right:2px;bottom:2px;width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;border:2px solid #fff;font-size:12px;line-height:1;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:2}#c99-cam.ok{background:#059669}#c99-cam.bad{background:#d97706}body.layout-portrait:not(.printing-a4) #c99-wrap{width:auto;display:flex;align-items:center;gap:6px;margin:0}body.layout-portrait:not(.printing-a4) #c99-ring{width:40px;height:40px;font-size:15px;border-width:2px;margin:0}body.layout-portrait:not(.printing-a4) #c99-in{width:40px;height:40px}body.layout-portrait:not(.printing-a4) #c99-cam{display:none}</style>
+<!-- Google Fonts for Option B (Pastel Minimal) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons Web v2.1.1 (Official MIT) -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+<!-- SCHOOLPOP 2026: OPTION B (PASTEL MINIMAL DASHBOARD) DESIGN SYSTEM -->
+<style id="schoolpop-option-b-styles">
+:root {
+    --sp-bg: #F3F9F8;
+    --sp-surface: #FFFFFF;
+    --sp-text: #191D2B;
+    --sp-muted: #64748B;
+    --sp-border: #E8EEF0;
+    --sp-accent: #191D2B;
+    
+    /* Pastel Tokens - Phương Án B */
+    --sp-mint-bg: #D4ECE8;
+    --sp-mint-icon: #168C81;
+    --sp-pink-bg: #F9D7E8;
+    --sp-pink-icon: #B9467B;
+    --sp-yellow-bg: #FFE8AA;
+    --sp-yellow-icon: #A56E11;
+    --sp-lavender-bg: #E5D9F5;
+    --sp-lavender-icon: #7950AA;
+    --sp-blue-bg: #DCEBF9;
+    --sp-blue-icon: #2F6DA4;
+
+    --sp-radius-card: 22px;
+    --sp-radius-box: 16px;
+    --sp-radius-pill: 999px;
+    --sp-shadow: 0 10px 30px rgba(36, 60, 65, 0.05);
+}
+
+body {
+    font-family: 'Be Vietnam Pro', 'Nunito', system-ui, -apple-system, sans-serif !important;
+    color: var(--sp-text) !important;
+    background: radial-gradient(circle at 92% 10%, #fadce9 0 14%, transparent 15%),
+                radial-gradient(circle at 8% 90%, #d5ebe6 0 18%, transparent 19%),
+                var(--sp-bg) !important;
+}
+
+#app-wrapper {
+    border-radius: 28px !important;
+    box-shadow: 0 16px 48px rgba(25, 29, 43, 0.08) !important;
+    background: transparent !important;
+}
+
+/* ---------------- SIDEBAR (PASTEL MINIMAL) ---------------- */
+#left-sidebar {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 26px rgba(36, 60, 65, 0.04) !important;
+    padding: 18px 12px !important;
+}
+
+#user-box {
+    background: var(--sp-mint-bg) !important;
+    border: 1px solid #BFE0DA !important;
+    border-radius: 20px !important;
+    padding: 14px 10px !important;
+    box-shadow: none !important;
+    position: relative !important;
+}
+
+#user-role-label {
+    color: var(--sp-mint-icon) !important;
+    font-weight: 800 !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+}
+
+#user-name {
+    color: var(--sp-text) !important;
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.3px !important;
+}
+
+#c99-ring {
+    background: var(--sp-mint-icon) !important;
+    box-shadow: 0 4px 12px rgba(22, 140, 129, 0.25) !important;
+    border-color: #FFFFFF !important;
+}
+
+#btn-logout-ico {
+    background: #FFFFFF !important;
+    color: #E11D48 !important;
+    border: 1px solid #FFE4E6 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+}
+
+#left-sidebar .side-btn {
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    font-size: 13.5px !important;
+    padding: 12px 14px !important;
+    letter-spacing: 0.02em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    border: 1px solid transparent !important;
+}
+
+#left-sidebar .side-btn i.ph {
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+#left-sidebar .side-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06) !important;
+}
+
+#btn-go-home {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+}
+#btn-go-home:hover {
+    background: #2D3446 !important;
+}
+
+#btn-open-library {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+    border-color: #F3BED9 !important;
+}
+#btn-open-library:hover {
+    background: #F4C4DE !important;
+}
+
+#btn-bank {
+    background: var(--sp-yellow-bg) !important;
+    color: var(--sp-yellow-icon) !important;
+    border-color: #FEDE85 !important;
+}
+#btn-bank:hover {
+    background: #FCE092 !important;
+}
+
+#btn-student-class, #btn-class-manager {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+    border-color: #BFE3DD !important;
+}
+#btn-student-class:hover, #btn-class-manager:hover {
+    background: #C4E6E1 !important;
+}
+
+#btn-members {
+    background: var(--sp-lavender-bg) !important;
+    color: var(--sp-lavender-icon) !important;
+    border-color: #D6C2F0 !important;
+}
+#btn-members:hover {
+    background: #DCBCEB !important;
+}
+
+#left-sidebar #btn-mix-sidebar {
+    background: var(--sp-lavender-bg) !important;
+    color: var(--sp-lavender-icon) !important;
+    border-color: #D6C2F0 !important;
+}
+#left-sidebar #btn-mix-sidebar:hover {
+    background: #DCBCEB !important;
+}
+
+#btn-logout {
+    background: #FFF1F2 !important;
+    color: #E11D48 !important;
+    border-color: #FFE4E6 !important;
+    margin-top: 8px !important;
+}
+#btn-logout:hover {
+    background: #FFE4E6 !important;
+}
+
+/* ---------------- RIGHT PANE & DASHBOARD ---------------- */
+#right-pane {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 26px rgba(36, 60, 65, 0.04) !important;
+    padding: 18px !important;
+}
+
+#right-header-box {
+    background: #F8FAFB !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 18px !important;
+    padding: 12px 18px !important;
+    box-shadow: none !important;
+}
+
+#quiz-subtitle {
+    color: var(--sp-text) !important;
+    font-weight: 800 !important;
+    font-size: 20px !important;
+}
+
+#timer-badge {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+    border-radius: 999px !important;
+    padding: 6px 14px !important;
+    font-weight: 800 !important;
+    box-shadow: none !important;
+    border: 1px solid #F3BED9 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+#btn-header-start {
+    background: #48BFA8 !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(72, 191, 168, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+#btn-header-home {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(25, 29, 43, 0.15) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+/* ---------------- CODE83 DASHBOARD CARDS ---------------- */
+#code83-home {
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+.c83-top {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+.c83-card {
+    background: #FFFFFF !important;
+    border-radius: var(--sp-radius-card) !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03) !important;
+    padding: 22px !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.c83-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 28px rgba(36, 60, 65, 0.08) !important;
+    border-color: #CBD5E1 !important;
+}
+
+.c83-card-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 16px !important;
+}
+
+.c83-card-head h3 {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: var(--sp-text) !important;
+}
+
+.c83-ico {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: var(--sp-radius-box) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease !important;
+    border: none !important;
+}
+
+.c83-card:hover .c83-ico {
+    transform: scale(1.08) rotate(-2deg) !important;
+}
+
+/* Thư viện đề thi - Pink container */
+.c83-card:nth-child(1) .c83-ico,
+.c83-card[aria-label="Thư viện đề thi"] .c83-ico {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+}
+
+/* Lớp học của tôi - Mint container */
+.c83-card:nth-child(2) .c83-ico,
+.c83-card[aria-label="Lớp học của tôi"] .c83-ico {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+}
+
+/* Học sinh tiêu biểu - Yellow container */
+.c83-card:nth-child(3) .c83-ico,
+.c83-card[aria-label="Học sinh tiêu biểu"] .c83-medal,
+.c83-card[aria-label="Học sinh tiêu biểu"] .c83-ico {
+    background: var(--sp-yellow-bg) !important;
+    color: var(--sp-yellow-icon) !important;
+    border-radius: var(--sp-radius-box) !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.c83-lbl {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: var(--sp-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    margin-bottom: 4px !important;
+}
+
+.c83-num {
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    color: var(--sp-text) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+}
+
+.c99-row {
+    background: #F8FAFB !important;
+    border-radius: 14px !important;
+    border: 1px solid var(--sp-border) !important;
+    margin-bottom: 8px !important;
+    padding: 10px 14px !important;
+    transition: all 0.15s ease !important;
+}
+
+.c99-row:hover {
+    background: #F1F5F9 !important;
+}
+
+.c99-row.r1 {
+    background: #FFFBEB !important;
+    border-color: #FDE68A !important;
+}
+
+.c99-name {
+    font-weight: 800 !important;
+    color: var(--sp-text) !important;
+    font-size: 14px !important;
+}
+
+.c99-sc {
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    color: var(--sp-mint-icon) !important;
+    background: var(--sp-mint-bg) !important;
+    padding: 4px 10px !important;
+    border-radius: 999px !important;
+}
+
+/* ---------------- LOGIN MODAL (PASTEL MINIMAL) ---------------- */
+#login-modal > div {
+    border-radius: 28px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 20px 50px rgba(25, 29, 43, 0.15) !important;
+    overflow: hidden !important;
+}
+
+#login-hero {
+    background: #F3F9F8 !important;
+    border-bottom: 1px solid var(--sp-border) !important;
+    padding: 28px 24px 20px !important;
+    color: var(--sp-text) !important;
+}
+
+#login-hero-title {
+    color: var(--sp-text) !important;
+    font-weight: 900 !important;
+    font-size: 22px !important;
+    letter-spacing: -0.3px !important;
+    text-shadow: none !important;
+}
+
+#login-design-line {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+    border-radius: 999px !important;
+    padding: 4px 14px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    display: inline-block !important;
+    margin-top: 8px !important;
+}
+
+#login-role-select {
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 14px !important;
+    background: #F8FAFB !important;
+    color: var(--sp-text) !important;
+    font-weight: 700 !important;
+    padding: 10px 14px !important;
+    outline: none !important;
+}
+
+#login-role-select:focus {
+    border-color: var(--sp-mint-icon) !important;
+    box-shadow: 0 0 0 3px rgba(22, 140, 129, 0.12) !important;
+}
+
+#login-submit-btn {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+    border-radius: 16px !important;
+    padding: 14px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(25, 29, 43, 0.15) !important;
+    transition: all 0.2s ease !important;
+}
+
+#login-submit-btn:hover {
+    background: #2D3446 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ---------------- EXAM & QUESTIONS (PASTEL MINIMAL) ---------------- */
+.q-card, .question-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: var(--sp-radius-card) !important;
+    box-shadow: 0 4px 14px rgba(36, 60, 65, 0.03) !important;
+    padding: 24px !important;
+    margin-bottom: 18px !important;
+}
+
+.q-option-btn {
+    border-radius: 14px !important;
+    border: 1px solid #E2E8F0 !important;
+    transition: all 0.15s ease !important;
+}
+
+.q-option-btn:hover {
+    border-color: var(--sp-mint-icon) !important;
+    background: var(--sp-bg) !important;
+}
+
+.q-option-btn.selected, .q-option-btn.active {
+    background: var(--sp-mint-bg) !important;
+    border-color: var(--sp-mint-icon) !important;
+    color: var(--sp-mint-icon) !important;
+    font-weight: 800 !important;
+}
+
+/* ---------------- MODALS & POPUPS ---------------- */
+#library-modal > div, #class-modal > div, #word-import-modal > div, #share-link-modal > div, #results-modal > div {
+    border-radius: 24px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
+}
+</style>
+
+</head>
 <body>
     <div id="app-wrapper" style="width: 1618px; height: 900px; --stage-h: 900px; transform: translate(0px, 0.00494438px) scale(0.7911); top: 0px;">
         <!-- Các phần tử cũ được giữ ẩn để mã nhập/đăng nhập cũ vẫn chạy ổn định (không hiển thị) -->
@@ -2078,32 +2562,41 @@ body.layout-portrait #tguest-note{display:none}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"></path><path d="M6.4 6.6a8 8 0 1 0 11.2 0"></path></svg>
                 </button>
             </div>
-            <div id="bottom-controls-grid" class="flex flex-col gap-3.5 mt-4">
-                <button id="btn-go-home" type="button" onclick="goHome()" title="Về trang chủ" class="side-btn bg-gradient-to-r from-sky-500 to-blue-600">
-                    <svg class="sb-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"></path></svg>
-                    <span class="sb-txt">🏠 TRANG CHỦ</span>
+            <div id="bottom-controls-grid" class="flex flex-col gap-2.5 mt-3">
+                <button id="btn-go-home" type="button" onclick="goHome()" title="Về trang chủ" class="side-btn">
+                    <i class="ph ph-squares-four"></i>
+                    <span class="sb-txt">TRANG CHỦ</span>
                 </button>
-                <button id="btn-open-library" type="button" onclick="openLibrary()" class="side-btn bg-gradient-to-r from-purple-500 to-indigo-600">
-                    THƯ VIỆN
+                <button id="btn-open-library" type="button" onclick="openLibrary()" title="Thư viện đề thi" class="side-btn">
+                    <i class="ph ph-books"></i>
+                    <span>THƯ VIỆN ĐỀ</span>
                 </button>
                 <!-- [CODE126] Máy tính: NGÂN HÀNG ĐỀ | Điện thoại: TỰ LUYỆN (cùng một nội dung, đồng bộ) -->
-                <button id="btn-bank" type="button" onclick="window.CODE126Bank &amp;&amp; CODE126Bank.open()" title="Ngân hàng đề / Tự luyện" class="side-btn bg-gradient-to-r from-amber-500 to-orange-600">
-                    <span class="bk-desk"><span class="bk-ico">📚 </span>NGÂN HÀNG ĐỀ</span><span class="bk-mob">TỰ LUYỆN</span>
+                <button id="btn-bank" type="button" onclick="window.CODE126Bank &amp;&amp; CODE126Bank.open()" title="Ngân hàng đề / Tự luyện" class="side-btn">
+                    <i class="ph ph-list-checks"></i>
+                    <span class="bk-desk">NGÂN HÀNG ĐỀ</span><span class="bk-mob">TỰ LUYỆN</span>
                 </button>
-                <button id="btn-student-class" type="button" onclick="openStudentClasses()" class="hidden side-btn bg-gradient-to-r from-emerald-500 to-teal-600">
-                    LỚP HỌC
+                <button id="btn-student-class" type="button" onclick="openStudentClasses()" class="hidden side-btn">
+                    <i class="ph ph-graduation-cap"></i>
+                    <span>LỚP HỌC CỦA TÔI</span>
                 </button>
-                <button id="btn-class-manager" type="button" onclick="openClassManager()" class="side-btn teacher-only-btn bg-gradient-to-r from-teal-500 to-cyan-600">
-                    QUẢN LÍ LỚP HỌC
+                <button id="btn-class-manager" type="button" onclick="openClassManager()" class="side-btn teacher-only-btn">
+                    <i class="ph ph-users-three"></i>
+                    <span>QUẢN LÍ LỚP HỌC</span>
                 </button>
-                <!-- [CODE171] QUẢN LÍ THÀNH VIÊN (chỉ giáo viên): xem / phê duyệt / xóa tài khoản học sinh đã đăng kí. Điện thoại: thay cho nút THƯ VIỆN -->
-                <button id="btn-members" type="button" onclick="window.MemberMgr &amp;&amp; MemberMgr.open()" title="Quản lí thành viên (phê duyệt / xóa tài khoản học sinh)" class="side-btn teacher-only-btn bg-gradient-to-r from-rose-500 to-pink-600">
-                    <span class="mm-txt">👥 QUẢN LÍ THÀNH VIÊN</span><span id="members-badge" class="mm-badge" hidden="">0</span>
+                <!-- [CODE171] QUẢN LÍ THÀNH VIÊN (chỉ giáo viên) -->
+                <button id="btn-members" type="button" onclick="window.MemberMgr &amp;&amp; MemberMgr.open()" title="Quản lí thành viên" class="side-btn teacher-only-btn">
+                    <i class="ph ph-user-check"></i>
+                    <span class="mm-txt">QUẢN LÍ THÀNH VIÊN</span><span id="members-badge" class="mm-badge" hidden="">0</span>
                 </button>
-                <button id="btn-mix-sidebar" type="button" onclick="if (window.CODE93Mix) CODE93Mix.open()" title="Trộn đề thi thành nhiều mã đề" class="side-btn teacher-only-btn">
-                    🔀 TRỘN ĐỀ THI
+                <button id="btn-mix-sidebar" type="button" onclick="if (window.CODE93Mix) CODE93Mix.open()" title="Trộn đề thi 4 phần BGD" class="side-btn teacher-only-btn">
+                    <i class="ph ph-shuffle"></i>
+                    <span>TRỘN ĐỀ 4 PHẦN</span>
                 </button>
-                <button type="button" id="btn-logout" onclick="logoutApp()" title="Đăng xuất khỏi hệ thống" class="side-btn bg-red-600" data-orig="ĐĂNG XUẤT">ĐĂNG XUẤT</button>
+                <button type="button" id="btn-logout" onclick="logoutApp()" title="Đăng xuất khỏi hệ thống" class="side-btn" data-orig="ĐĂNG XUẤT">
+                    <i class="ph ph-sign-out"></i>
+                    <span>ĐĂNG XUẤT</span>
+                </button>
             </div>
         </aside>
 
@@ -2116,12 +2609,12 @@ body.layout-portrait #tguest-note{display:none}
                     <button id="btn-header-start" type="button" onclick="startStudentQuiz()" class="no-print hidden bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white text-[14px] font-black px-3.5 py-1.5 rounded-full shadow-md whitespace-nowrap transition-transform active:scale-95 uppercase">
                         ▶ BẮT ĐẦU
                     </button>
-                    <button id="btn-header-home" type="button" onclick="goHomeFromQuiz()" title="Về trang chủ" class="no-print hidden items-center gap-1.5 bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white text-[15px] font-black px-3.5 py-1.5 rounded-full shadow-md whitespace-nowrap transition-transform active:scale-95 uppercase">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 11l9-8 9 8M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10"></path></svg>
-                        <span>HOME</span>
+                    <button id="btn-header-home" type="button" onclick="goHomeFromQuiz()" title="Về trang chủ" class="no-print hidden items-center gap-1.5 text-white text-[14px] font-black px-4 py-2 rounded-full whitespace-nowrap transition-transform active:scale-95 uppercase">
+                        <i class="ph ph-house" style="font-size: 18px;"></i>
+                        <span>TRANG CHỦ</span>
                     </button>
-                    <div id="timer-badge" class="no-print hidden items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-[15px] font-black px-3.5 py-1.5 rounded-full shadow-md whitespace-nowrap transition-all">
-                        <span>⏱</span>
+                    <div id="timer-badge" class="no-print hidden items-center gap-1.5 text-[14px] font-black px-4 py-1.5 rounded-full whitespace-nowrap transition-all">
+                        <i class="ph ph-clock-countdown" style="font-size: 18px;"></i>
                         <span id="timer-display">05:00</span>
                     </div>
                     
@@ -2268,12 +2761,12 @@ body.layout-portrait #tguest-note{display:none}
 
         <div id="login-modal" class="absolute inset-0 bg-slate-900/75 backdrop-blur-sm z-[80] flex justify-center items-center transition-opacity duration-300 no-print">
             <div class="bg-white rounded-3xl w-[92%] max-w-md max-h-[94%] shadow-2xl border-4 border-indigo-200 overflow-y-auto">
-                <div id="login-hero" class="bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-500 px-6 py-5 text-center text-white relative">
-                    <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur mx-auto flex items-center justify-center mb-2 shadow-inner border border-white/30">
-                        <span class="text-3xl">🎨</span>
+                <div id="login-hero" class="px-6 py-6 text-center relative">
+                    <div class="w-16 h-16 rounded-2xl bg-[#D4ECE8] mx-auto flex items-center justify-center mb-3 shadow-sm border border-[#BFE0DA]">
+                        <i class="ph-duotone ph-chalkboard-teacher" style="font-size: 32px; color: #168C81;"></i>
                     </div>
-                    <h2 id="login-hero-title" class="text-2xl font-black uppercase tracking-wide drop-shadow-sm">ĐĂNG NHẬP HỆ THỐNG</h2>
-                    <p id="login-design-line" class="text-xs font-bold text-sky-100 mt-1">QUẢN LÝ & GIAO ĐỀ THI TỰ HỌC 2026</p>
+                    <h2 id="login-hero-title" class="text-2xl font-black uppercase tracking-wide">ĐĂNG NHẬP HỆ THỐNG</h2>
+                    <p id="login-design-line">QUẢN LÝ & GIAO ĐỀ THI TỰ HỌC 2026</p>
                 </div>
 
                 <div class="p-6 space-y-4 bg-gradient-to-b from-white to-slate-50">
@@ -2289,7 +2782,7 @@ body.layout-portrait #tguest-note{display:none}
                     <div id="login-name-group" class="hidden">
                         <label id="login-name-label" class="block text-sm font-black text-pink-700 uppercase mb-1.5">2. Họ và tên (GV hoặc HS):</label>
                         <div id="login-name-box" class="flex items-center gap-2 bg-pink-50/60 border-2 border-pink-200 focus-within:border-pink-500 focus-within:ring-2 focus-within:ring-pink-200 rounded-xl px-3.5 py-2 transition-all">
-                            <span class="text-lg">🌸</span>
+                            <i class="ph ph-user" style="color: #64748B; font-size: 18px;"></i>
                             <input id="login-name-input" type="text" oninput="clearLoginError()" onkeydown="if(event.key==='Enter') submitLoginModal()" placeholder="Nhập họ và tên Giáo viên..." class="w-full bg-transparent outline-none text-base font-black text-blue-900 placeholder-pink-300" value="">
                         </div>
                     </div>
@@ -2297,7 +2790,7 @@ body.layout-portrait #tguest-note{display:none}
                     <div id="login-class-group" class="hidden">
                         <label id="login-class-label" class="block text-sm font-black text-sky-700 uppercase mb-1.5">3. Lớp:</label>
                         <div id="login-class-box" class="flex items-center gap-2 bg-sky-50/60 border-2 border-sky-200 focus-within:border-sky-500 focus-within:ring-2 focus-within:ring-sky-200 rounded-xl px-3.5 py-2 transition-all">
-                            <span class="text-lg">⭐</span>
+                            <i class="ph ph-graduation-cap" style="color: #64748B; font-size: 18px;"></i>
                             <input id="login-class-input" type="text" oninput="clearLoginError()" onkeydown="if(event.key==='Enter') submitLoginModal()" placeholder="Nhập lớp của em (VD: 12A1)..." class="w-full bg-transparent outline-none text-base font-black text-blue-900 placeholder-sky-300" value="">
                         </div>
                     </div>
@@ -2329,7 +2822,7 @@ body.layout-portrait #tguest-note{display:none}
                     <div id="login-pass-group" class="">
                         <label id="login-pass-label" class="block text-sm font-black text-emerald-700 uppercase mb-1.5">2. Nhập mật khẩu:</label>
                         <div id="login-pass-box" class="flex items-center gap-2 bg-emerald-50/60 border-2 border-emerald-200 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-200 rounded-xl px-3.5 py-2 transition-all">
-                            <span class="text-lg">🔑</span>
+                            <i class="ph ph-lock-key" style="color: #64748B; font-size: 18px;"></i>
                             <input id="login-pass-input" type="password" autocomplete="current-password" oninput="clearLoginError()" onkeydown="if(event.key==='Enter') submitLoginModal()" placeholder="Nhập mật khẩu..." class="w-full bg-transparent outline-none text-base font-black text-blue-900 placeholder-emerald-300">
                         </div>
                     </div>
@@ -2337,7 +2830,7 @@ body.layout-portrait #tguest-note{display:none}
                     <div id="login-pass2-group" class="hidden">
                         <label id="login-pass2-label" class="block text-sm font-black text-emerald-700 uppercase mb-1.5">4. Xác nhận lại mật khẩu:</label>
                         <div id="login-pass2-box" class="flex items-center gap-2 bg-emerald-50/60 border-2 border-emerald-200 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-200 rounded-xl px-3.5 py-2 transition-all">
-                            <span class="text-lg">🔐</span>
+                            <i class="ph ph-lock-key-open" style="color: #64748B; font-size: 18px;"></i>
                             <input id="login-pass2-input" type="password" autocomplete="new-password" oninput="clearLoginError()" onkeydown="if(event.key==='Enter') submitLoginModal()" placeholder="Nhập lại mật khẩu..." class="w-full bg-transparent outline-none text-base font-black text-blue-900 placeholder-emerald-300">
                         </div>
                     </div>
@@ -20253,7 +20746,491 @@ body.layout-portrait:not(.printing-a4) #left-sidebar #btn-members{border:3px sol
                 const cells = asg.map(a => { const b = cmBestResult(cls, s, a); return `<td>${b ? cmFmt(b.val) + (b.late ? ' (trễ)' : '') + (b.n > 1 ? ' (' + b.n + ' lần)' : '') : ''}</td>`; }).join('');
                 h += `<tr><td>${i + 1}</td><td>${esc(s.name)}</td>${cells}<td>${cmFmt(cmStudentStats(cls, s).avg).replace('—', '')}</td><td>${esc(s.note || '')}</td></tr>`;
             });
-            const doc = `<html xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8"></head><body><h3>Bảng điểm lớp ${esc(cls.name)}</h3><table border="1">${h}</table>
+            const doc = `<html xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8">
+<!-- Google Fonts for Option B (Pastel Minimal) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons Web v2.1.1 (Official MIT) -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+<!-- SCHOOLPOP 2026: OPTION B (PASTEL MINIMAL DASHBOARD) DESIGN SYSTEM -->
+<style id="schoolpop-option-b-styles">
+:root {
+    --sp-bg: #F3F9F8;
+    --sp-surface: #FFFFFF;
+    --sp-text: #191D2B;
+    --sp-muted: #64748B;
+    --sp-border: #E8EEF0;
+    --sp-accent: #191D2B;
+    
+    /* Pastel Tokens - Phương Án B */
+    --sp-mint-bg: #D4ECE8;
+    --sp-mint-icon: #168C81;
+    --sp-pink-bg: #F9D7E8;
+    --sp-pink-icon: #B9467B;
+    --sp-yellow-bg: #FFE8AA;
+    --sp-yellow-icon: #A56E11;
+    --sp-lavender-bg: #E5D9F5;
+    --sp-lavender-icon: #7950AA;
+    --sp-blue-bg: #DCEBF9;
+    --sp-blue-icon: #2F6DA4;
+
+    --sp-radius-card: 22px;
+    --sp-radius-box: 16px;
+    --sp-radius-pill: 999px;
+    --sp-shadow: 0 10px 30px rgba(36, 60, 65, 0.05);
+}
+
+body {
+    font-family: 'Be Vietnam Pro', 'Nunito', system-ui, -apple-system, sans-serif !important;
+    color: var(--sp-text) !important;
+    background: radial-gradient(circle at 92% 10%, #fadce9 0 14%, transparent 15%),
+                radial-gradient(circle at 8% 90%, #d5ebe6 0 18%, transparent 19%),
+                var(--sp-bg) !important;
+}
+
+#app-wrapper {
+    border-radius: 28px !important;
+    box-shadow: 0 16px 48px rgba(25, 29, 43, 0.08) !important;
+    background: transparent !important;
+}
+
+/* ---------------- SIDEBAR (PASTEL MINIMAL) ---------------- */
+#left-sidebar {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 26px rgba(36, 60, 65, 0.04) !important;
+    padding: 18px 12px !important;
+}
+
+#user-box {
+    background: var(--sp-mint-bg) !important;
+    border: 1px solid #BFE0DA !important;
+    border-radius: 20px !important;
+    padding: 14px 10px !important;
+    box-shadow: none !important;
+    position: relative !important;
+}
+
+#user-role-label {
+    color: var(--sp-mint-icon) !important;
+    font-weight: 800 !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+}
+
+#user-name {
+    color: var(--sp-text) !important;
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.3px !important;
+}
+
+#c99-ring {
+    background: var(--sp-mint-icon) !important;
+    box-shadow: 0 4px 12px rgba(22, 140, 129, 0.25) !important;
+    border-color: #FFFFFF !important;
+}
+
+#btn-logout-ico {
+    background: #FFFFFF !important;
+    color: #E11D48 !important;
+    border: 1px solid #FFE4E6 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+}
+
+#left-sidebar .side-btn {
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    font-size: 13.5px !important;
+    padding: 12px 14px !important;
+    letter-spacing: 0.02em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    border: 1px solid transparent !important;
+}
+
+#left-sidebar .side-btn i.ph {
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+#left-sidebar .side-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06) !important;
+}
+
+#btn-go-home {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+}
+#btn-go-home:hover {
+    background: #2D3446 !important;
+}
+
+#btn-open-library {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+    border-color: #F3BED9 !important;
+}
+#btn-open-library:hover {
+    background: #F4C4DE !important;
+}
+
+#btn-bank {
+    background: var(--sp-yellow-bg) !important;
+    color: var(--sp-yellow-icon) !important;
+    border-color: #FEDE85 !important;
+}
+#btn-bank:hover {
+    background: #FCE092 !important;
+}
+
+#btn-student-class, #btn-class-manager {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+    border-color: #BFE3DD !important;
+}
+#btn-student-class:hover, #btn-class-manager:hover {
+    background: #C4E6E1 !important;
+}
+
+#btn-members {
+    background: var(--sp-lavender-bg) !important;
+    color: var(--sp-lavender-icon) !important;
+    border-color: #D6C2F0 !important;
+}
+#btn-members:hover {
+    background: #DCBCEB !important;
+}
+
+#left-sidebar #btn-mix-sidebar {
+    background: var(--sp-lavender-bg) !important;
+    color: var(--sp-lavender-icon) !important;
+    border-color: #D6C2F0 !important;
+}
+#left-sidebar #btn-mix-sidebar:hover {
+    background: #DCBCEB !important;
+}
+
+#btn-logout {
+    background: #FFF1F2 !important;
+    color: #E11D48 !important;
+    border-color: #FFE4E6 !important;
+    margin-top: 8px !important;
+}
+#btn-logout:hover {
+    background: #FFE4E6 !important;
+}
+
+/* ---------------- RIGHT PANE & DASHBOARD ---------------- */
+#right-pane {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 26px rgba(36, 60, 65, 0.04) !important;
+    padding: 18px !important;
+}
+
+#right-header-box {
+    background: #F8FAFB !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 18px !important;
+    padding: 12px 18px !important;
+    box-shadow: none !important;
+}
+
+#quiz-subtitle {
+    color: var(--sp-text) !important;
+    font-weight: 800 !important;
+    font-size: 20px !important;
+}
+
+#timer-badge {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+    border-radius: 999px !important;
+    padding: 6px 14px !important;
+    font-weight: 800 !important;
+    box-shadow: none !important;
+    border: 1px solid #F3BED9 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+#btn-header-start {
+    background: #48BFA8 !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(72, 191, 168, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+#btn-header-home {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(25, 29, 43, 0.15) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+/* ---------------- CODE83 DASHBOARD CARDS ---------------- */
+#code83-home {
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+.c83-top {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+.c83-card {
+    background: #FFFFFF !important;
+    border-radius: var(--sp-radius-card) !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03) !important;
+    padding: 22px !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.c83-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 28px rgba(36, 60, 65, 0.08) !important;
+    border-color: #CBD5E1 !important;
+}
+
+.c83-card-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 16px !important;
+}
+
+.c83-card-head h3 {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: var(--sp-text) !important;
+}
+
+.c83-ico {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: var(--sp-radius-box) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease !important;
+    border: none !important;
+}
+
+.c83-card:hover .c83-ico {
+    transform: scale(1.08) rotate(-2deg) !important;
+}
+
+/* Thư viện đề thi - Pink container */
+.c83-card:nth-child(1) .c83-ico,
+.c83-card[aria-label="Thư viện đề thi"] .c83-ico {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+}
+
+/* Lớp học của tôi - Mint container */
+.c83-card:nth-child(2) .c83-ico,
+.c83-card[aria-label="Lớp học của tôi"] .c83-ico {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+}
+
+/* Học sinh tiêu biểu - Yellow container */
+.c83-card:nth-child(3) .c83-ico,
+.c83-card[aria-label="Học sinh tiêu biểu"] .c83-medal,
+.c83-card[aria-label="Học sinh tiêu biểu"] .c83-ico {
+    background: var(--sp-yellow-bg) !important;
+    color: var(--sp-yellow-icon) !important;
+    border-radius: var(--sp-radius-box) !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.c83-lbl {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: var(--sp-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    margin-bottom: 4px !important;
+}
+
+.c83-num {
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    color: var(--sp-text) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+}
+
+.c99-row {
+    background: #F8FAFB !important;
+    border-radius: 14px !important;
+    border: 1px solid var(--sp-border) !important;
+    margin-bottom: 8px !important;
+    padding: 10px 14px !important;
+    transition: all 0.15s ease !important;
+}
+
+.c99-row:hover {
+    background: #F1F5F9 !important;
+}
+
+.c99-row.r1 {
+    background: #FFFBEB !important;
+    border-color: #FDE68A !important;
+}
+
+.c99-name {
+    font-weight: 800 !important;
+    color: var(--sp-text) !important;
+    font-size: 14px !important;
+}
+
+.c99-sc {
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    color: var(--sp-mint-icon) !important;
+    background: var(--sp-mint-bg) !important;
+    padding: 4px 10px !important;
+    border-radius: 999px !important;
+}
+
+/* ---------------- LOGIN MODAL (PASTEL MINIMAL) ---------------- */
+#login-modal > div {
+    border-radius: 28px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 20px 50px rgba(25, 29, 43, 0.15) !important;
+    overflow: hidden !important;
+}
+
+#login-hero {
+    background: #F3F9F8 !important;
+    border-bottom: 1px solid var(--sp-border) !important;
+    padding: 28px 24px 20px !important;
+    color: var(--sp-text) !important;
+}
+
+#login-hero-title {
+    color: var(--sp-text) !important;
+    font-weight: 900 !important;
+    font-size: 22px !important;
+    letter-spacing: -0.3px !important;
+    text-shadow: none !important;
+}
+
+#login-design-line {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+    border-radius: 999px !important;
+    padding: 4px 14px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    display: inline-block !important;
+    margin-top: 8px !important;
+}
+
+#login-role-select {
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 14px !important;
+    background: #F8FAFB !important;
+    color: var(--sp-text) !important;
+    font-weight: 700 !important;
+    padding: 10px 14px !important;
+    outline: none !important;
+}
+
+#login-role-select:focus {
+    border-color: var(--sp-mint-icon) !important;
+    box-shadow: 0 0 0 3px rgba(22, 140, 129, 0.12) !important;
+}
+
+#login-submit-btn {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+    border-radius: 16px !important;
+    padding: 14px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(25, 29, 43, 0.15) !important;
+    transition: all 0.2s ease !important;
+}
+
+#login-submit-btn:hover {
+    background: #2D3446 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ---------------- EXAM & QUESTIONS (PASTEL MINIMAL) ---------------- */
+.q-card, .question-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: var(--sp-radius-card) !important;
+    box-shadow: 0 4px 14px rgba(36, 60, 65, 0.03) !important;
+    padding: 24px !important;
+    margin-bottom: 18px !important;
+}
+
+.q-option-btn {
+    border-radius: 14px !important;
+    border: 1px solid #E2E8F0 !important;
+    transition: all 0.15s ease !important;
+}
+
+.q-option-btn:hover {
+    border-color: var(--sp-mint-icon) !important;
+    background: var(--sp-bg) !important;
+}
+
+.q-option-btn.selected, .q-option-btn.active {
+    background: var(--sp-mint-bg) !important;
+    border-color: var(--sp-mint-icon) !important;
+    color: var(--sp-mint-icon) !important;
+    font-weight: 800 !important;
+}
+
+/* ---------------- MODALS & POPUPS ---------------- */
+#library-modal > div, #class-modal > div, #word-import-modal > div, #share-link-modal > div, #results-modal > div {
+    border-radius: 24px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
+}
+</style>
+
+</head><body><h3>Bảng điểm lớp ${esc(cls.name)}</h3><table border="1">${h}</table>
 <!-- Nút chuyển đổi nhanh sang Bản Demo Giao diện Phương án B -->
 <a id="btn-quick-demo-link" href="demo.html" style="position: fixed; bottom: 20px; right: 20px; z-index: 999999; background: #222832; color: #ffffff; padding: 11px 20px; border-radius: 999px; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 13.5px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; border: 2px solid #48BFA8; transition: transform 180ms ease;">
     <span style="font-size: 16px;">🎨</span> Xem Demo Giao Diện (Phương Án B) ↗
@@ -21085,16 +22062,16 @@ body.layout-portrait:not(.printing-a4) #left-sidebar #btn-members{border:3px sol
     function wrapHtml(d) { return '<div id="code83-home"' + (d.stu ? ' class="c85-stu"' : '') + '>' + html(d) + '</div>'; }
 
     var IC = {
-        lib: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M9 9v7M12 12v4M15 7v9"/></svg>',
-        users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M18 14.4c1.8.8 3 2.6 3 4.6"/></svg>',
-        trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>',
-        school: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6-9 6z"/><path d="M7 12.5V17c0 1.4 2.2 3 5 3s5-1.6 5-3v-4.5"/></svg>',
-        medal: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h4l1 5-3 1zM17 2h-4l-1 5 3 1z" opacity=".55"/><circle cx="12" cy="15" r="6.5"/><path d="M12 11.5l1.1 2.2 2.4.35-1.75 1.7.42 2.4L12 17l-2.17 1.15.42-2.4-1.75-1.7 2.4-.35z" fill="#fff6d6"/></svg>',
-        q: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>',
-        clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
-        plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
-        word: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 17v-6M9.5 13.5 12 11l2.5 2.5"/></svg>',
-        folder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>'
+        lib: '<i class="ph-duotone ph-books" style="font-size:24px;"></i>',
+        users: '<i class="ph-duotone ph-users-three" style="font-size:24px;"></i>',
+        trophy: '<i class="ph-duotone ph-trophy" style="font-size:24px;"></i>',
+        school: '<i class="ph-duotone ph-graduation-cap" style="font-size:24px;"></i>',
+        medal: '<i class="ph-duotone ph-award" style="font-size:24px;"></i>',
+        q: '<i class="ph-duotone ph-list-checks" style="font-size:24px;"></i>',
+        clock: '<i class="ph-duotone ph-clock" style="font-size:24px;"></i>',
+        plus: '<i class="ph-bold ph-plus" style="font-size:20px;"></i>',
+        word: '<i class="ph-duotone ph-file-doc" style="font-size:24px;"></i>',
+        folder: '<i class="ph-duotone ph-folder" style="font-size:24px;"></i>'
     };
 
     function arr(v) { return Array.isArray(v) ? v : []; }
@@ -27408,7 +28385,491 @@ try { if (!isStu() && !localStorage.getItem(LSK0 + '_c137')) { st.lessons = {}; 
         // Dự phòng: bảng HTML mở được bằng Excel
         var e2 = function (x) { return esc(x == null ? '' : x); };
         var h = '<tr>' + head.map(function (x) { return '<th>' + e2(x) + '</th>'; }).join('') + '</tr>' + aoa.map(function (r) { return '<tr>' + r.map(function (x) { return '<td>' + e2(x) + '</td>'; }).join('') + '</tr>'; }).join('');
-        var doc = '<html xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8"></head><body><h3>Đánh giá tiến bộ lớp ' + e2(cls.name) + ' - ' + e2(p.label) + '</h3><table border="1">' + h + '</table>
+        var doc = '<html xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8">
+<!-- Google Fonts for Option B (Pastel Minimal) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Phosphor Icons Web v2.1.1 (Official MIT) -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+<!-- SCHOOLPOP 2026: OPTION B (PASTEL MINIMAL DASHBOARD) DESIGN SYSTEM -->
+<style id="schoolpop-option-b-styles">
+:root {
+    --sp-bg: #F3F9F8;
+    --sp-surface: #FFFFFF;
+    --sp-text: #191D2B;
+    --sp-muted: #64748B;
+    --sp-border: #E8EEF0;
+    --sp-accent: #191D2B;
+    
+    /* Pastel Tokens - Phương Án B */
+    --sp-mint-bg: #D4ECE8;
+    --sp-mint-icon: #168C81;
+    --sp-pink-bg: #F9D7E8;
+    --sp-pink-icon: #B9467B;
+    --sp-yellow-bg: #FFE8AA;
+    --sp-yellow-icon: #A56E11;
+    --sp-lavender-bg: #E5D9F5;
+    --sp-lavender-icon: #7950AA;
+    --sp-blue-bg: #DCEBF9;
+    --sp-blue-icon: #2F6DA4;
+
+    --sp-radius-card: 22px;
+    --sp-radius-box: 16px;
+    --sp-radius-pill: 999px;
+    --sp-shadow: 0 10px 30px rgba(36, 60, 65, 0.05);
+}
+
+body {
+    font-family: 'Be Vietnam Pro', 'Nunito', system-ui, -apple-system, sans-serif !important;
+    color: var(--sp-text) !important;
+    background: radial-gradient(circle at 92% 10%, #fadce9 0 14%, transparent 15%),
+                radial-gradient(circle at 8% 90%, #d5ebe6 0 18%, transparent 19%),
+                var(--sp-bg) !important;
+}
+
+#app-wrapper {
+    border-radius: 28px !important;
+    box-shadow: 0 16px 48px rgba(25, 29, 43, 0.08) !important;
+    background: transparent !important;
+}
+
+/* ---------------- SIDEBAR (PASTEL MINIMAL) ---------------- */
+#left-sidebar {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 26px rgba(36, 60, 65, 0.04) !important;
+    padding: 18px 12px !important;
+}
+
+#user-box {
+    background: var(--sp-mint-bg) !important;
+    border: 1px solid #BFE0DA !important;
+    border-radius: 20px !important;
+    padding: 14px 10px !important;
+    box-shadow: none !important;
+    position: relative !important;
+}
+
+#user-role-label {
+    color: var(--sp-mint-icon) !important;
+    font-weight: 800 !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+}
+
+#user-name {
+    color: var(--sp-text) !important;
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.3px !important;
+}
+
+#c99-ring {
+    background: var(--sp-mint-icon) !important;
+    box-shadow: 0 4px 12px rgba(22, 140, 129, 0.25) !important;
+    border-color: #FFFFFF !important;
+}
+
+#btn-logout-ico {
+    background: #FFFFFF !important;
+    color: #E11D48 !important;
+    border: 1px solid #FFE4E6 !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+}
+
+#left-sidebar .side-btn {
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    font-size: 13.5px !important;
+    padding: 12px 14px !important;
+    letter-spacing: 0.02em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02) !important;
+    border: 1px solid transparent !important;
+}
+
+#left-sidebar .side-btn i.ph {
+    font-size: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+#left-sidebar .side-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06) !important;
+}
+
+#btn-go-home {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+}
+#btn-go-home:hover {
+    background: #2D3446 !important;
+}
+
+#btn-open-library {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+    border-color: #F3BED9 !important;
+}
+#btn-open-library:hover {
+    background: #F4C4DE !important;
+}
+
+#btn-bank {
+    background: var(--sp-yellow-bg) !important;
+    color: var(--sp-yellow-icon) !important;
+    border-color: #FEDE85 !important;
+}
+#btn-bank:hover {
+    background: #FCE092 !important;
+}
+
+#btn-student-class, #btn-class-manager {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+    border-color: #BFE3DD !important;
+}
+#btn-student-class:hover, #btn-class-manager:hover {
+    background: #C4E6E1 !important;
+}
+
+#btn-members {
+    background: var(--sp-lavender-bg) !important;
+    color: var(--sp-lavender-icon) !important;
+    border-color: #D6C2F0 !important;
+}
+#btn-members:hover {
+    background: #DCBCEB !important;
+}
+
+#left-sidebar #btn-mix-sidebar {
+    background: var(--sp-lavender-bg) !important;
+    color: var(--sp-lavender-icon) !important;
+    border-color: #D6C2F0 !important;
+}
+#left-sidebar #btn-mix-sidebar:hover {
+    background: #DCBCEB !important;
+}
+
+#btn-logout {
+    background: #FFF1F2 !important;
+    color: #E11D48 !important;
+    border-color: #FFE4E6 !important;
+    margin-top: 8px !important;
+}
+#btn-logout:hover {
+    background: #FFE4E6 !important;
+}
+
+/* ---------------- RIGHT PANE & DASHBOARD ---------------- */
+#right-pane {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 26px rgba(36, 60, 65, 0.04) !important;
+    padding: 18px !important;
+}
+
+#right-header-box {
+    background: #F8FAFB !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 18px !important;
+    padding: 12px 18px !important;
+    box-shadow: none !important;
+}
+
+#quiz-subtitle {
+    color: var(--sp-text) !important;
+    font-weight: 800 !important;
+    font-size: 20px !important;
+}
+
+#timer-badge {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+    border-radius: 999px !important;
+    padding: 6px 14px !important;
+    font-weight: 800 !important;
+    box-shadow: none !important;
+    border: 1px solid #F3BED9 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+#btn-header-start {
+    background: #48BFA8 !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(72, 191, 168, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+#btn-header-home {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    padding: 7px 18px !important;
+    box-shadow: 0 4px 12px rgba(25, 29, 43, 0.15) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+/* ---------------- CODE83 DASHBOARD CARDS ---------------- */
+#code83-home {
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+.c83-top {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+.c83-card {
+    background: #FFFFFF !important;
+    border-radius: var(--sp-radius-card) !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03) !important;
+    padding: 22px !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.c83-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 28px rgba(36, 60, 65, 0.08) !important;
+    border-color: #CBD5E1 !important;
+}
+
+.c83-card-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 16px !important;
+}
+
+.c83-card-head h3 {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: var(--sp-text) !important;
+}
+
+.c83-ico {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: var(--sp-radius-box) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease !important;
+    border: none !important;
+}
+
+.c83-card:hover .c83-ico {
+    transform: scale(1.08) rotate(-2deg) !important;
+}
+
+/* Thư viện đề thi - Pink container */
+.c83-card:nth-child(1) .c83-ico,
+.c83-card[aria-label="Thư viện đề thi"] .c83-ico {
+    background: var(--sp-pink-bg) !important;
+    color: var(--sp-pink-icon) !important;
+}
+
+/* Lớp học của tôi - Mint container */
+.c83-card:nth-child(2) .c83-ico,
+.c83-card[aria-label="Lớp học của tôi"] .c83-ico {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+}
+
+/* Học sinh tiêu biểu - Yellow container */
+.c83-card:nth-child(3) .c83-ico,
+.c83-card[aria-label="Học sinh tiêu biểu"] .c83-medal,
+.c83-card[aria-label="Học sinh tiêu biểu"] .c83-ico {
+    background: var(--sp-yellow-bg) !important;
+    color: var(--sp-yellow-icon) !important;
+    border-radius: var(--sp-radius-box) !important;
+    width: 48px !important;
+    height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.c83-lbl {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: var(--sp-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    margin-bottom: 4px !important;
+}
+
+.c83-num {
+    font-size: 30px !important;
+    font-weight: 900 !important;
+    color: var(--sp-text) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+}
+
+.c99-row {
+    background: #F8FAFB !important;
+    border-radius: 14px !important;
+    border: 1px solid var(--sp-border) !important;
+    margin-bottom: 8px !important;
+    padding: 10px 14px !important;
+    transition: all 0.15s ease !important;
+}
+
+.c99-row:hover {
+    background: #F1F5F9 !important;
+}
+
+.c99-row.r1 {
+    background: #FFFBEB !important;
+    border-color: #FDE68A !important;
+}
+
+.c99-name {
+    font-weight: 800 !important;
+    color: var(--sp-text) !important;
+    font-size: 14px !important;
+}
+
+.c99-sc {
+    font-weight: 900 !important;
+    font-size: 16px !important;
+    color: var(--sp-mint-icon) !important;
+    background: var(--sp-mint-bg) !important;
+    padding: 4px 10px !important;
+    border-radius: 999px !important;
+}
+
+/* ---------------- LOGIN MODAL (PASTEL MINIMAL) ---------------- */
+#login-modal > div {
+    border-radius: 28px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 20px 50px rgba(25, 29, 43, 0.15) !important;
+    overflow: hidden !important;
+}
+
+#login-hero {
+    background: #F3F9F8 !important;
+    border-bottom: 1px solid var(--sp-border) !important;
+    padding: 28px 24px 20px !important;
+    color: var(--sp-text) !important;
+}
+
+#login-hero-title {
+    color: var(--sp-text) !important;
+    font-weight: 900 !important;
+    font-size: 22px !important;
+    letter-spacing: -0.3px !important;
+    text-shadow: none !important;
+}
+
+#login-design-line {
+    background: var(--sp-mint-bg) !important;
+    color: var(--sp-mint-icon) !important;
+    border-radius: 999px !important;
+    padding: 4px 14px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    display: inline-block !important;
+    margin-top: 8px !important;
+}
+
+#login-role-select {
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 14px !important;
+    background: #F8FAFB !important;
+    color: var(--sp-text) !important;
+    font-weight: 700 !important;
+    padding: 10px 14px !important;
+    outline: none !important;
+}
+
+#login-role-select:focus {
+    border-color: var(--sp-mint-icon) !important;
+    box-shadow: 0 0 0 3px rgba(22, 140, 129, 0.12) !important;
+}
+
+#login-submit-btn {
+    background: var(--sp-accent) !important;
+    color: #FFFFFF !important;
+    border-radius: 16px !important;
+    padding: 14px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 4px 14px rgba(25, 29, 43, 0.15) !important;
+    transition: all 0.2s ease !important;
+}
+
+#login-submit-btn:hover {
+    background: #2D3446 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* ---------------- EXAM & QUESTIONS (PASTEL MINIMAL) ---------------- */
+.q-card, .question-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: var(--sp-radius-card) !important;
+    box-shadow: 0 4px 14px rgba(36, 60, 65, 0.03) !important;
+    padding: 24px !important;
+    margin-bottom: 18px !important;
+}
+
+.q-option-btn {
+    border-radius: 14px !important;
+    border: 1px solid #E2E8F0 !important;
+    transition: all 0.15s ease !important;
+}
+
+.q-option-btn:hover {
+    border-color: var(--sp-mint-icon) !important;
+    background: var(--sp-bg) !important;
+}
+
+.q-option-btn.selected, .q-option-btn.active {
+    background: var(--sp-mint-bg) !important;
+    border-color: var(--sp-mint-icon) !important;
+    color: var(--sp-mint-icon) !important;
+    font-weight: 800 !important;
+}
+
+/* ---------------- MODALS & POPUPS ---------------- */
+#library-modal > div, #class-modal > div, #word-import-modal > div, #share-link-modal > div, #results-modal > div {
+    border-radius: 24px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
+}
+</style>
+
+</head><body><h3>Đánh giá tiến bộ lớp ' + e2(cls.name) + ' - ' + e2(p.label) + '</h3><table border="1">' + h + '</table>
 <!-- Nút chuyển đổi nhanh sang Bản Demo Giao diện Phương án B -->
 <a id="btn-quick-demo-link" href="demo.html" style="position: fixed; bottom: 20px; right: 20px; z-index: 999999; background: #222832; color: #ffffff; padding: 11px 20px; border-radius: 999px; font-family: 'Segoe UI', Tahoma, sans-serif; font-size: 13.5px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 8px; border: 2px solid #48BFA8; transition: transform 180ms ease;">
     <span style="font-size: 16px;">🎨</span> Xem Demo Giao Diện (Phương Án B) ↗
