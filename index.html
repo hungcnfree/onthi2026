@@ -2537,6 +2537,471 @@ body {
     border: 1px solid var(--sp-border) !important;
     box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
 }
+
+/* ---------------- OPTION B: PASTEL DASHBOARD STYLES ---------------- */
+.sp-dashboard-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 2px;
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+.sp-top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 18px 24px;
+    border: 1px solid var(--sp-border);
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sp-greet-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--sp-text);
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.sp-greet-sub {
+    font-size: 13.5px;
+    color: var(--sp-muted);
+    font-weight: 500;
+}
+
+.sp-banner-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sp-badge-cloud {
+    background: #E0F2FE;
+    color: #0369A1;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sp-badge-year {
+    background: var(--sp-mint-bg);
+    color: var(--sp-mint-icon);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 4 Core Pop Cards Grid */
+.sp-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 1200px) {
+    .sp-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .sp-cards-grid { grid-template-columns: 1fr; }
+}
+
+.sp-card-pop {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 1px solid var(--sp-border);
+    padding: 22px 20px;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+}
+
+.sp-card-pop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(36, 60, 65, 0.08);
+}
+
+.sp-card-pop.mint:hover { border-color: #A3D6CE; }
+.sp-card-pop.pink:hover { border-color: #F3BED9; }
+.sp-card-pop.yellow:hover { border-color: #FDE68A; }
+.sp-card-pop.lavender:hover { border-color: #D6C2F0; }
+
+.sp-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sp-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: transform 0.2s ease;
+}
+
+.sp-card-pop:hover .sp-card-icon {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.sp-card-pop.mint .sp-card-icon { background: var(--sp-mint-bg); color: var(--sp-mint-icon); }
+.sp-card-pop.pink .sp-card-icon { background: var(--sp-pink-bg); color: var(--sp-pink-icon); }
+.sp-card-pop.yellow .sp-card-icon { background: var(--sp-yellow-bg); color: var(--sp-yellow-icon); }
+.sp-card-pop.lavender .sp-card-icon { background: var(--sp-lavender-bg); color: var(--sp-lavender-icon); }
+
+.sp-card-pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.4px;
+}
+
+.sp-card-pop.mint .sp-card-pill { background: var(--sp-mint-bg); color: var(--sp-mint-icon); }
+.sp-card-pop.pink .sp-card-pill { background: var(--sp-pink-bg); color: var(--sp-pink-icon); }
+.sp-card-pop.yellow .sp-card-pill { background: var(--sp-yellow-bg); color: var(--sp-yellow-icon); }
+.sp-card-pop.lavender .sp-card-pill { background: var(--sp-lavender-bg); color: var(--sp-lavender-icon); }
+
+.sp-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sp-muted);
+    margin-bottom: 4px;
+}
+
+.sp-card-stat {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--sp-text);
+    line-height: 1.15;
+    margin-bottom: 6px;
+}
+
+.sp-card-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+}
+
+/* Secondary Action Row */
+.sp-actions-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sp-act-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid var(--sp-border);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sp-text);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: all 0.18s ease;
+}
+
+.sp-act-pill:hover {
+    background: #F8FAFB;
+    border-color: #CBD5E1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.sp-act-pill i {
+    font-size: 18px;
+}
+
+/* Bottom 2-Column Grid */
+.sp-bottom-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .sp-bottom-grid { grid-template-columns: 1fr; }
+}
+
+.sp-panel {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 1px solid var(--sp-border);
+    padding: 22px;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+}
+
+.sp-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sp-panel-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--sp-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sp-link-btn {
+    background: transparent;
+    border: none;
+    color: #0284C7;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sp-link-btn:hover {
+    text-decoration: underline;
+}
+
+.sp-badge-tag {
+    background: #F1F5F9;
+    color: #475569;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Topic list */
+.sp-topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sp-topic-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8FAFB;
+    border: 1px solid var(--sp-border);
+    padding: 12px 16px;
+    border-radius: 16px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.sp-topic-card:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.sp-topic-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--sp-text);
+    margin-bottom: 2px;
+}
+
+.sp-topic-sub {
+    font-size: 12px;
+    color: var(--sp-muted);
+}
+
+.sp-btn-do {
+    background: var(--sp-accent);
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sp-btn-do:hover {
+    background: #2D3446;
+}
+
+/* Rank list */
+.sp-rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sp-rank-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F8FAFB;
+    border: 1px solid var(--sp-border);
+    padding: 10px 14px;
+    border-radius: 14px;
+}
+
+.sp-rank-row.r1 {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+.sp-rank-no {
+    font-size: 18px;
+    font-weight: 900;
+    width: 28px;
+    text-align: center;
+}
+
+.sp-rank-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sp-rank-name {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--sp-text);
+}
+
+.sp-rank-sub {
+    font-size: 11.5px;
+    color: var(--sp-muted);
+}
+
+.sp-rank-score {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--sp-mint-icon);
+    background: var(--sp-mint-bg);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.sp-empty-box {
+    text-align: center;
+    padding: 30px 16px;
+    color: var(--sp-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ---------------- OPTION B: EXAM & QUESTION TYPOGRAPHY ---------------- */
+:is(#questions-container, .qc-live) .q-option-btn,
+:is(#questions-container, .qc-live) .q-option-btn *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-tf-row,
+:is(#questions-container, .qc-live) .q-tf-row *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-sa-label,
+:is(#questions-container, .qc-live) .q-sa-key,
+:is(#questions-container, .qc-live) .q-part-header,
+:is(#questions-container, .qc-live) .q-part-header *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-title-text,
+:is(#questions-container, .qc-live) .q-stem-normal {
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+:is(#questions-container, .qc-live) .q-card,
+:is(#questions-container, .qc-live) .question-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03) !important;
+    padding: 24px 22px !important;
+    margin-bottom: 20px !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn {
+    border-radius: 14px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    padding: 12px 18px !important;
+    transition: all 0.15s ease !important;
+    background: #FFFFFF !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn:hover {
+    border-color: #168C81 !important;
+    background: #F3F9F8 !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn.selected,
+:is(#questions-container, .qc-live) .q-option-btn.active,
+:is(#questions-container, .qc-live) .q-tf-btn.selected {
+    background: #D4ECE8 !important;
+    border-color: #168C81 !important;
+    color: #168C81 !important;
+    font-weight: 800 !important;
+}
+
+/* ---------------- OPTION B: MODAL POLISH ---------------- */
+#library-modal > div,
+#class-modal > div,
+#word-import-modal > div,
+#share-link-modal > div,
+#results-modal > div,
+#result-detail-modal > div,
+#editor-modal > div {
+    border-radius: 24px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
+    overflow: hidden !important;
+}
+
+#library-modal .bg-gradient-to-r,
+#class-modal .bg-gradient-to-r,
+#share-link-modal .bg-gradient-to-r,
+#word-import-modal .bg-gradient-to-r,
+#results-modal .bg-gradient-to-r {
+    background: #191D2B !important;
+    color: #FFFFFF !important;
+    padding: 16px 22px !important;
+}
+
+/* Scrollbar refinement */
+.custom-scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
 </style>
 
 </head>
@@ -8505,24 +8970,26 @@ body.layout-portrait:not(.printing-a4) #left-sidebar #btn-members{border:3px sol
             if (typing && _lastPortrait !== null) portrait = _lastPortrait;
             if (!typing) _lastPortrait = portrait;
             let STAGE_W, STAGE_H;
-            if (portrait) {
-                // [CODE20] Màn hình dọc: dùng đúng kích thước thật của màn hình (scale = 1) để không bị cắt mép
-                STAGE_W = vw;
-                STAGE_H = (typing && vvp) ? Math.round(vvp.height) : vh;   // [CODE34] khung chỉ cao bằng phần màn hình nằm trên bàn phím
-            } else {
-                STAGE_H = vh >= 500 ? 900 : 560;   // [CODE199] mọi màn hình ngang (laptop, iPad) dùng khung 900 như máy 13,3 inch; chỉ điện thoại nằm ngang dùng 560
-                STAGE_W = Math.min(2000, Math.max(1360, Math.round(STAGE_H * vw / vh)));
-            }
             document.body.classList.toggle('layout-portrait', portrait);
-
-            const finalScale = portrait ? 1 : Math.min(vw / STAGE_W, vh / STAGE_H) * userZoomFactor;
-            const offsetX = (vw - STAGE_W * finalScale) / 2;
-            const offsetY = (vh - STAGE_H * finalScale) / 2;
-            const transform = `translate(${offsetX}px, ${offsetY}px) scale(${finalScale})`;
-            wrapper.style.width = STAGE_W + 'px';
-            wrapper.style.height = STAGE_H + 'px';
-            wrapper.style.setProperty('--stage-h', STAGE_H + 'px');
-            wrapper.style.transform = transform;
+            if (portrait) {
+                STAGE_W = vw;
+                STAGE_H = (typing && vvp) ? Math.round(vvp.height) : vh;
+                wrapper.style.width = STAGE_W + 'px';
+                wrapper.style.height = STAGE_H + 'px';
+                wrapper.style.setProperty('--stage-h', STAGE_H + 'px');
+                wrapper.style.transform = 'none';
+                wrapper.style.top = (typing && vvp ? Math.max(0, Math.round(vvp.offsetTop)) : 0) + 'px';
+                wrapper.style.left = '0px';
+            } else {
+                STAGE_W = vw;
+                STAGE_H = vh;
+                wrapper.style.width = '100vw';
+                wrapper.style.height = '100vh';
+                wrapper.style.setProperty('--stage-h', STAGE_H + 'px');
+                wrapper.style.transform = 'none';
+                wrapper.style.top = '0px';
+                wrapper.style.left = '0px';
+            }
             // [CODE34] iOS cuộn trang khi bật bàn phím: đặt khung bám đúng đầu vùng nhìn thấy
             wrapper.style.top = (portrait && typing && vvp ? Math.max(0, Math.round(vvp.offsetTop)) : 0) + 'px';
             document.body.classList.toggle('kb-typing', Boolean(portrait && typing));
@@ -21228,6 +21695,471 @@ body {
     border: 1px solid var(--sp-border) !important;
     box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
 }
+
+/* ---------------- OPTION B: PASTEL DASHBOARD STYLES ---------------- */
+.sp-dashboard-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 2px;
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+.sp-top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 18px 24px;
+    border: 1px solid var(--sp-border);
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sp-greet-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--sp-text);
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.sp-greet-sub {
+    font-size: 13.5px;
+    color: var(--sp-muted);
+    font-weight: 500;
+}
+
+.sp-banner-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sp-badge-cloud {
+    background: #E0F2FE;
+    color: #0369A1;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sp-badge-year {
+    background: var(--sp-mint-bg);
+    color: var(--sp-mint-icon);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 4 Core Pop Cards Grid */
+.sp-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 1200px) {
+    .sp-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .sp-cards-grid { grid-template-columns: 1fr; }
+}
+
+.sp-card-pop {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 1px solid var(--sp-border);
+    padding: 22px 20px;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+}
+
+.sp-card-pop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(36, 60, 65, 0.08);
+}
+
+.sp-card-pop.mint:hover { border-color: #A3D6CE; }
+.sp-card-pop.pink:hover { border-color: #F3BED9; }
+.sp-card-pop.yellow:hover { border-color: #FDE68A; }
+.sp-card-pop.lavender:hover { border-color: #D6C2F0; }
+
+.sp-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sp-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: transform 0.2s ease;
+}
+
+.sp-card-pop:hover .sp-card-icon {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.sp-card-pop.mint .sp-card-icon { background: var(--sp-mint-bg); color: var(--sp-mint-icon); }
+.sp-card-pop.pink .sp-card-icon { background: var(--sp-pink-bg); color: var(--sp-pink-icon); }
+.sp-card-pop.yellow .sp-card-icon { background: var(--sp-yellow-bg); color: var(--sp-yellow-icon); }
+.sp-card-pop.lavender .sp-card-icon { background: var(--sp-lavender-bg); color: var(--sp-lavender-icon); }
+
+.sp-card-pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.4px;
+}
+
+.sp-card-pop.mint .sp-card-pill { background: var(--sp-mint-bg); color: var(--sp-mint-icon); }
+.sp-card-pop.pink .sp-card-pill { background: var(--sp-pink-bg); color: var(--sp-pink-icon); }
+.sp-card-pop.yellow .sp-card-pill { background: var(--sp-yellow-bg); color: var(--sp-yellow-icon); }
+.sp-card-pop.lavender .sp-card-pill { background: var(--sp-lavender-bg); color: var(--sp-lavender-icon); }
+
+.sp-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sp-muted);
+    margin-bottom: 4px;
+}
+
+.sp-card-stat {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--sp-text);
+    line-height: 1.15;
+    margin-bottom: 6px;
+}
+
+.sp-card-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+}
+
+/* Secondary Action Row */
+.sp-actions-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sp-act-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid var(--sp-border);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sp-text);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: all 0.18s ease;
+}
+
+.sp-act-pill:hover {
+    background: #F8FAFB;
+    border-color: #CBD5E1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.sp-act-pill i {
+    font-size: 18px;
+}
+
+/* Bottom 2-Column Grid */
+.sp-bottom-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .sp-bottom-grid { grid-template-columns: 1fr; }
+}
+
+.sp-panel {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 1px solid var(--sp-border);
+    padding: 22px;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+}
+
+.sp-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sp-panel-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--sp-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sp-link-btn {
+    background: transparent;
+    border: none;
+    color: #0284C7;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sp-link-btn:hover {
+    text-decoration: underline;
+}
+
+.sp-badge-tag {
+    background: #F1F5F9;
+    color: #475569;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Topic list */
+.sp-topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sp-topic-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8FAFB;
+    border: 1px solid var(--sp-border);
+    padding: 12px 16px;
+    border-radius: 16px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.sp-topic-card:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.sp-topic-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--sp-text);
+    margin-bottom: 2px;
+}
+
+.sp-topic-sub {
+    font-size: 12px;
+    color: var(--sp-muted);
+}
+
+.sp-btn-do {
+    background: var(--sp-accent);
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sp-btn-do:hover {
+    background: #2D3446;
+}
+
+/* Rank list */
+.sp-rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sp-rank-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F8FAFB;
+    border: 1px solid var(--sp-border);
+    padding: 10px 14px;
+    border-radius: 14px;
+}
+
+.sp-rank-row.r1 {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+.sp-rank-no {
+    font-size: 18px;
+    font-weight: 900;
+    width: 28px;
+    text-align: center;
+}
+
+.sp-rank-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sp-rank-name {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--sp-text);
+}
+
+.sp-rank-sub {
+    font-size: 11.5px;
+    color: var(--sp-muted);
+}
+
+.sp-rank-score {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--sp-mint-icon);
+    background: var(--sp-mint-bg);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.sp-empty-box {
+    text-align: center;
+    padding: 30px 16px;
+    color: var(--sp-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ---------------- OPTION B: EXAM & QUESTION TYPOGRAPHY ---------------- */
+:is(#questions-container, .qc-live) .q-option-btn,
+:is(#questions-container, .qc-live) .q-option-btn *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-tf-row,
+:is(#questions-container, .qc-live) .q-tf-row *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-sa-label,
+:is(#questions-container, .qc-live) .q-sa-key,
+:is(#questions-container, .qc-live) .q-part-header,
+:is(#questions-container, .qc-live) .q-part-header *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-title-text,
+:is(#questions-container, .qc-live) .q-stem-normal {
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+:is(#questions-container, .qc-live) .q-card,
+:is(#questions-container, .qc-live) .question-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03) !important;
+    padding: 24px 22px !important;
+    margin-bottom: 20px !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn {
+    border-radius: 14px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    padding: 12px 18px !important;
+    transition: all 0.15s ease !important;
+    background: #FFFFFF !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn:hover {
+    border-color: #168C81 !important;
+    background: #F3F9F8 !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn.selected,
+:is(#questions-container, .qc-live) .q-option-btn.active,
+:is(#questions-container, .qc-live) .q-tf-btn.selected {
+    background: #D4ECE8 !important;
+    border-color: #168C81 !important;
+    color: #168C81 !important;
+    font-weight: 800 !important;
+}
+
+/* ---------------- OPTION B: MODAL POLISH ---------------- */
+#library-modal > div,
+#class-modal > div,
+#word-import-modal > div,
+#share-link-modal > div,
+#results-modal > div,
+#result-detail-modal > div,
+#editor-modal > div {
+    border-radius: 24px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
+    overflow: hidden !important;
+}
+
+#library-modal .bg-gradient-to-r,
+#class-modal .bg-gradient-to-r,
+#share-link-modal .bg-gradient-to-r,
+#word-import-modal .bg-gradient-to-r,
+#results-modal .bg-gradient-to-r {
+    background: #191D2B !important;
+    color: #FFFFFF !important;
+    padding: 16px 22px !important;
+}
+
+/* Scrollbar refinement */
+.custom-scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
 </style>
 
 </head><body><h3>Bảng điểm lớp ${esc(cls.name)}</h3><table border="1">${h}</table>
@@ -22335,92 +23267,214 @@ body {
     }
 
     function html(d) {
-        var days = [];
-        for (var i = 6; i >= 0; i--) { var x = new Date(Date.now() - i * DAY); days.push(x.getDate() + '/' + (x.getMonth() + 1)); }
         var s = '';
-        if (false && d.stu) {   /* [CODE85] nút truy cập nhanh — [CODE198] đã TẮT: bỏ nút "TRUY CẬP NHANH LỚP HỌC CỦA TÔI" ở trang chủ học sinh (máy tính + điện thoại) */
-            s += '<button type="button" class="c85-quick" data-c83="myclasses" aria-label="Truy cập nhanh lớp học của tôi"><span class="c85-quick-ic">' + IC.school + '</span>' +
-                '<span class="c85-quick-tx"><b>TRUY CẬP NHANH LỚP HỌC CỦA TÔI</b><small>' + (d.myCount ? N(d.myCount) + ' lớp • ' + N(d.assignedCount) + ' bài được giao — bấm để làm bài ngay' : 'Bấm để tìm lớp và xin vào lớp') + '</small></span><span class="c85-quick-go" aria-hidden="true">›</span></button>';
-        }
-        s += '<div class="c83-top">';
+        var teacherName = '';
+        try {
+            var un = document.getElementById('user-name');
+            if (un && un.textContent) teacherName = un.textContent.trim();
+        } catch(e) {}
+        if (!teacherName || teacherName.indexOf('Thầy/Cô') !== -1) teacherName = 'Thầy Hùng';
 
-        // 1. Thư viện đề thi
-        s += '<section class="c83-card" aria-label="Thư viện đề thi"><div class="c83-card-head"><h3>Thư Viện Đề Thi</h3>' +
-            '<button type="button" class="c83-ico" data-c83="lib" aria-label="Mở Thư viện" title="Mở Thư viện">' + IC.lib + '</button></div>' +
-            '<div class="c83-pair"><div><div class="c83-lbl">Tổng số đề thi:</div><div class="c83-num">' + N(d.topics.length) + '</div>' +
-            bars(d.subjList.length ? d.subjList.map(function (x) { return x[1]; }) : [0, 0, 0, 0, 0], false, d.subjList.map(function (x) { return x[0]; })) +
-            '<div class="c83-cap" title="Số đề theo môn học">' + (d.subjList.length ? d.subjList.slice(0, 3).map(function (x) { return H(x[0]) + ' ' + x[1]; }).join(' • ') + (d.subjList.length > 3 ? ' …' : '') : 'Chưa có môn học') + '</div></div>' +
-            '<div><div class="c83-lbl">Đề thi mới tạo:</div><div class="c83-num">' + N(d.newCount) + '</div>' + bars(d.newDaily, true, days) + '</div></div></section>';
-
-        // 2. Lớp học của tôi
-        s += '<section class="c83-card" aria-label="Lớp học của tôi"><div class="c83-card-head"><h3>Lớp Học Của Tôi</h3>' +
-            '<button type="button" class="c83-ico" data-c83="' + (d.stu ? 'myclasses' : 'classes') + '" aria-label="' + (d.stu ? 'Mở Lớp học của tôi' : 'Mở Quản lí lớp học') + '" title="' + (d.stu ? 'Mở Lớp học của tôi' : 'Mở Quản lí lớp học') + '">' + IC.users + '</button></div>' +
-            '<div class="c83-pair"><div><div class="c83-lbl">Tổng số Lớp:</div><div class="c83-num">' + N(d.classes.length) + '</div>' + spark(d.studentsPerClass.slice(0, 8)) + '<div class="c83-cap" title="Môn học của các lớp">' + (d.cap ? H(d.cap) : (d.classSubj.length ? 'Môn: ' + d.classSubj.slice(0, 3).map(H).join(', ') : N(d.studentsTotal) + ' học sinh')) + '</div></div>' +
-            '<div><div class="c83-lbl">' + (d.stu ? 'Bài em làm tuần qua:' : 'Lượt học tuần qua:') + '</div><div class="c83-num">' + N(d.week) + '</div>' + spark(d.daily) + '</div></div></section>';
-
-        // 3. Học sinh tiêu biểu
-        s += '<section class="c83-card" aria-label="Học sinh tiêu biểu"><div class="c83-card-head"><h3>Học Sinh Tiêu Biểu</h3><span class="c83-medal" aria-hidden="true">' + IC.medal + '</span></div>';
-        if (d.stars && d.stars.length) {
-            s += '<div class="c99-rank" role="list" aria-label="Xếp hạng học sinh tiêu biểu">';
-            d.stars.forEach(function (st, i) {
-                s += '<div class="c99-row r' + (i < 3 ? i + 1 : 0) + '" role="listitem"><span class="c99-no">' + (i < 3 ? ['🥇', '🥈', '🥉'][i] : (i + 1)) + '</span>' + avatar(st.name, 44, st.cls) +
-                    '<div style="min-width:0;flex:1"><div class="c99-name">' + H(st.name) + '</div>' +
-                    '<div class="c83-star-sub" style="margin:0">' + (st.cls ? 'Lớp ' + H(st.cls) + ' • ' : '') + (st.sj ? H(st.sj) + ' • ' : '') + st.n + ' bài' + (d.starWeek ? ' trong tuần' : '') + '</div></div>' +
-                    '<b class="c99-sc">' + F1(st.avg) + '</b></div>';
-            });
-            s += '</div>';
+        // 1. TOPBAR GREETING (Pastel Minimal)
+        s += '<div class="sp-dashboard-wrap">';
+        s += '<div class="sp-top-banner">';
+        s += '  <div class="sp-banner-left">';
+        if (d.stu) {
+            s += '    <h1 class="sp-greet-title">Xin chào, Em học sinh! 👋</h1>';
+            s += '    <p class="sp-greet-sub">Nền tảng Tự học 2026 • Chúc em ôn luyện chăm chỉ và đạt kết quả cao nhất!</p>';
         } else {
-            s += '<div class="c83-star">' + avatar('?', 78).replace('>?<', '>–<').replace(/background:linear-gradient\([^)]*\)\)/, 'background:#b9cdf3') + '<div class="c83-star-sub" style="margin:0">Chưa có bài nộp nào.<br>' + (d.stu ? 'Hãy làm bài để lên bảng vinh danh nhé!' : 'Giao đề cho lớp để xem học sinh nổi bật.') + '</div></div>';
+            s += '    <h1 class="sp-greet-title">Xin chào, ' + H(teacherName) + '! 👋</h1>';
+            s += '    <p class="sp-greet-sub">Trường THCS Đăk Ơ • Năm học 2025–2026 • Hệ thống Quản Lý & Giao Đề Thi Tự Học 2026</p>';
         }
-        s += '</section></div>';
-
-        // Hàng dưới
-        s += '<div class="c83-main">';
-        // Đề đề xuất
-        s += '<section class="c83-col" aria-label="Đề thi được đề xuất"><h3>Đề Thi Được Đề Xuất</h3>';
-        if (d.picked.length) {
-            var tagTxt = { 'new': 'Mới', hot: 'Đã Phổ Biến', pub: 'Đã Xuất Bản', draft: 'Bản Nháp', asg: 'Được Giao' };
-            s += '<div class="c83-recs">';
-            d.picked.forEach(function (p) {
-                var t = p.t, nq = arr(t.questions).length;
-                s += '<button type="button" class="c83-rec" data-c83="topic" data-id="' + H(t.id) + '" title="Mở đề này">' +
-                    '<span class="c83-tag ' + p.tag + '">' + tagTxt[p.tag] + '</span>' +
-                    '<span class="c83-rec-title">' + H(t.subtitle || t.title || 'Đề chưa đặt tên') + '</span>' +
-                    '<span class="c83-subj">' + H([t.subject, t.grade].filter(Boolean).join(' – ') || 'Chưa chọn môn') + '</span>' +
-                    '<span class="c83-rec-meta"><span>' + IC.q + nq + ' câu hỏi</span><span>' + IC.clock + (Number(t.timeLimit) || 50) + ' phút</span></span></button>';
-            });
-            s += '</div>';
-        } else {
-            s += '<div class="c83-empty">' + (d.stu ? 'Chưa có đề nào được giao.<br>Em có thể làm bài ở THƯ VIỆN hoặc TỰ LUYỆN.' : 'Thư viện chưa có đề nào.<br>Nhấn dấu + ở khung bên phải để soạn đề đầu tiên.') + '</div>';
-        }
-        s += '</section>';
-
-        // Hoạt động gần đây
-        s += '<section class="c83-col" aria-label="Hoạt động gần đây"><h3>Hoạt Động Gần Đây</h3>';
-        if (d.recent.length) {
-            s += '<div class="c83-acts">';
-            d.recent.forEach(function (x) {
-                var r = x.r, tp = d.byId[x.k], nm = r.studentName || 'Học sinh', cls = r.className || r.studentClass || '';
-                s += (d.stu ? '<div class="c83-act">' : '<button type="button" class="c83-act" data-c83="result" data-id="' + H(x.k) + '" title="Xem kết quả của đề này">') + avatar(nm, 36, cls) +
-                    '<span class="c83-act-body"><span class="c83-act-name" style="display:block">' + H(nm) + '</span><span class="c83-act-sub" style="display:block">' + H(tp ? ((tp.subject ? tp.subject + ': ' : '') + (tp.subtitle || tp.title)) : 'Đề đã xóa') + '</span></span>' +
-                    '<span class="c83-act-right"><span class="c83-act-score" style="display:block">' + (x.sc === null ? '—' : F1(x.sc) + '/10') + '</span><span class="c83-act-time" style="display:block">' + (cls ? 'Lớp ' + H(cls) : (x.ts ? ago(x.ts) : '')) + '</span></span>' + (d.stu ? '</div>' : '</button>');
-            });
-            s += '</div>';
-        } else {
-            s += '<div class="c83-empty">Chưa có học sinh nào nộp bài.</div>';
-        }
-        s += '</section>';
-
-        // Tạo đề nhanh
-        s += d.stu ? honorHtml(d) : '<section class="c83-col" aria-label="Khu vực tạo đề nhanh"><h3>Khu Vực Tạo Đề Nhanh</h3><div class="c83-quickbox">' +
-            '<div class="c83-orbit"><span class="c83-ring" aria-hidden="true"></span>' +
-            '<button type="button" class="c83-plus" data-c83="new" aria-label="Tạo nhanh đề thi" title="Tạo nhanh đề thi">' + IC.plus + '</button>' +
-            '<div class="c83-mini"><button type="button" class="c83-o-word" data-c83="word">' + IC.word + 'NHẬP TỪ WORD</button><button type="button" class="c83-o-lib" data-c83="lib">' + IC.folder + 'MỞ THƯ VIỆN</button><button type="button" class="c83-o-bank" data-c83="bank" title="Mở Ngân hàng đề">📚 NGÂN HÀNG ĐỀ</button></div>' +
-            '<button type="button" class="c83-mixbtn c83-o-mix" data-c83="mix" title="Trộn đề thi thành nhiều mã đề">🔀 TRỘN ĐỀ THI</button></div>' +
-            '<p class="c83-quick-t">Soạn đề mới trong vài bước</p>' +
-            '<p class="c83-quick-p">Nhấn dấu <b>+</b> để tạo nhanh đề thi, hoặc chọn một nút xung quanh.</p></div></section>';
+        s += '  </div>';
+        s += '  <div class="sp-banner-right">';
+        s += '    <div class="sp-badge-cloud" title="Trạng thái kết nối Firebase"><i class="ph-duotone ph-cloud-check"></i> Firebase Realtime</div>';
+        s += '    <div class="sp-badge-year"><i class="ph-duotone ph-sparkle"></i> Chuẩn BGD 2026</div>';
+        s += '  </div>';
         s += '</div>';
-        s += '<div class="c164-credit">🎨 ' + H(window.CODE164Designer ? window.CODE164Designer.line() : 'Hệ thống Thi Tự Học 2026') + '</div>';   /* [CODE164] */
+
+        // 2. THE 4 LARGE POP PASTEL CARDS (Option B Core)
+        s += '<div class="sp-cards-grid">';
+        
+        if (d.stu) {
+            // STUDENT CARD 1: Tự luyện đề SGK (Mint)
+            s += '<div class="sp-card-pop mint" data-c83="bank" title="Bấm để mở Ngân hàng đề tự luyện">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-graduation-cap"></i></div>';
+            s += '    <span class="sp-card-pill">SGK MỚI</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Tự luyện đề SGK</div>';
+            s += '    <div class="sp-card-stat">3 Bộ Sách</div>';
+            s += '    <div class="sp-card-desc">KNTT • Cánh Diều • Chân Trời Sáng Tạo</div>';
+            s += '  </div>';
+            s += '</div>';
+
+            // STUDENT CARD 2: Bài kiểm tra của Thầy (Pink)
+            s += '<div class="sp-card-pop pink" data-c83="myclasses" title="Bấm để xem các bài thi được giao">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-exam"></i></div>';
+            s += '    <span class="sp-card-pill">' + (d.assignedCount || 0) + ' BÀI GIAO</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Bài kiểm tra của Thầy</div>';
+            s += '    <div class="sp-card-stat">' + (d.assignedCount ? d.assignedCount + ' Đề thi' : 'Chưa có bài') + '</div>';
+            s += '    <div class="sp-card-desc">' + (d.myCount ? d.myCount + ' lớp học đã tham gia' : 'Bấm để vào lớp học') + '</div>';
+            s += '  </div>';
+            s += '</div>';
+
+            // STUDENT CARD 3: Bảng vàng thành tích (Yellow)
+            s += '<div class="sp-card-pop yellow" title="Bảng vinh danh học sinh tiêu biểu">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-trophy"></i></div>';
+            s += '    <span class="sp-card-pill">VINH DANH</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Bảng vàng thành tích</div>';
+            s += '    <div class="sp-card-stat">' + (d.star ? F1(d.star.avg) + ' Điểm' : 'Top Điểm Cao') + '</div>';
+            s += '    <div class="sp-card-desc">' + (d.star ? H(d.star.name) + (d.star.cls ? ' (' + H(d.star.cls) + ')' : '') : 'Thi đua học tập tích cực') + '</div>';
+            s += '  </div>';
+            s += '</div>';
+
+            // STUDENT CARD 4: Đấu trường Live P2P (Lavender)
+            s += '<div class="sp-card-pop lavender" data-c83="bank" title="Thi đấu trực tiếp cùng các bạn">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-game-controller"></i></div>';
+            s += '    <span class="sp-card-pill">LIVE P2P</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Đấu trường P2P</div>';
+            s += '    <div class="sp-card-stat">Trực Tiếp</div>';
+            s += '    <div class="sp-card-desc">Thi đấu thời gian thực không độ trễ</div>';
+            s += '  </div>';
+            s += '</div>';
+
+        } else {
+            // TEACHER CARD 1: Lớp học của tôi (Mint)
+            s += '<div class="sp-card-pop mint" data-c83="classes" title="Bấm để mở Quản lý lớp học">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-users-three"></i></div>';
+            s += '    <span class="sp-card-pill">' + (d.classes.length || 0) + ' LỚP</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Lớp học của tôi</div>';
+            s += '    <div class="sp-card-stat">' + (d.studentsTotal || 0) + ' Học sinh</div>';
+            s += '    <div class="sp-card-desc">' + (d.classSubj.length ? 'Môn: ' + d.classSubj.slice(0, 2).map(H).join(', ') : 'Đang quản lý lớp giảng dạy') + '</div>';
+            s += '  </div>';
+            s += '</div>';
+
+            // TEACHER CARD 2: Thư viện đề thi (Pink)
+            s += '<div class="sp-card-pop pink" data-c83="lib" title="Bấm để mở Thư viện đề thi">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-books"></i></div>';
+            s += '    <span class="sp-card-pill">' + (d.topics.length || 0) + ' ĐỀ THI</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Thư viện đề thi</div>';
+            s += '    <div class="sp-card-stat">' + (d.newCount ? '+' + d.newCount + ' mới tạo' : (d.topics.length || 0) + ' Đề') + '</div>';
+            s += '    <div class="sp-card-desc">' + (d.subjList.length ? d.subjList.slice(0, 2).map(function(x){ return H(x[0]) + ' ' + x[1]; }).join(' • ') : 'Chuẩn hóa ma trận Bộ GD') + '</div>';
+            s += '  </div>';
+            s += '</div>';
+
+            // TEACHER CARD 3: Ngân hàng câu hỏi SGK (Yellow)
+            s += '<div class="sp-card-pop yellow" data-c83="bank" title="Bấm để mở Ngân hàng đề SGK">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-list-checks"></i></div>';
+            s += '    <span class="sp-card-pill">SGK MỚI</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Ngân hàng câu hỏi SGK</div>';
+            s += '    <div class="sp-card-stat">4 Mức Độ</div>';
+            s += '    <div class="sp-card-desc">Nhận biết • Thông hiểu • Vận dụng</div>';
+            s += '  </div>';
+            s += '</div>';
+
+            // TEACHER CARD 4: Trộn đề 4 phần BGD (Lavender)
+            s += '<div class="sp-card-pop lavender" data-c83="mix" title="Bấm để mở công cụ Trộn đề thi 4 phần BGD">';
+            s += '  <div class="sp-card-head">';
+            s += '    <div class="sp-card-icon"><i class="ph-duotone ph-shuffle"></i></div>';
+            s += '    <span class="sp-card-pill">CHUẨN 2026</span>';
+            s += '  </div>';
+            s += '  <div class="sp-card-body">';
+            s += '    <div class="sp-card-title">Trộn đề 4 phần BGD</div>';
+            s += '    <div class="sp-card-stat">Hoán Vị</div>';
+            s += '    <div class="sp-card-desc">Phần I (Nhiều LC), II (Đ/S), III (Ngắn), IV (TL)</div>';
+            s += '  </div>';
+            s += '</div>';
+        }
+
+        s += '</div>'; // end sp-cards-grid
+
+        // 3. SECONDARY ACTION ROW (Thao tác nhanh)
+        s += '<div class="sp-actions-bar">';
+        if (!d.stu) {
+            s += '<button type="button" class="sp-act-pill" data-c83="word"><i class="ph ph-file-doc" style="color:#2F6DA4;"></i> Nhập đề Word (.docx MathType)</button>';
+            s += '<button type="button" class="sp-act-pill" data-c83="new"><i class="ph ph-plus-circle" style="color:#168C81;"></i> Tạo đề mới thủ công</button>';
+            s += '<button type="button" class="sp-act-pill" data-c83="members"><i class="ph ph-user-check" style="color:#7950AA;"></i> Quản lý thành viên học sinh</button>';
+            s += '<button type="button" class="sp-act-pill" data-c83="lib"><i class="ph ph-paper-plane-tilt" style="color:#B9467B;"></i> Giao bài cho lớp học</button>';
+        } else {
+            s += '<button type="button" class="sp-act-pill" data-c83="myclasses"><i class="ph ph-chalkboard-teacher" style="color:#168C81;"></i> Xem lớp học & Bài tập được giao</button>';
+            s += '<button type="button" class="sp-act-pill" data-c83="bank"><i class="ph ph-book-open" style="color:#A56E11;"></i> Tự luyện trắc nghiệm SGK</button>';
+        }
+        s += '</div>';
+
+        // 4. TWO-COLUMN CONTENT: RECOMMENDED TOPICS & RANKING
+        s += '<div class="sp-bottom-grid">';
+        
+        // Left: Đề thi nổi bật / đề xuất
+        s += '  <div class="sp-panel">';
+        s += '    <div class="sp-panel-head">';
+        s += '      <h3 class="sp-panel-title"><i class="ph-duotone ph-sparkle" style="color:#B9467B;"></i> ' + (d.stu ? 'Đề thi đề xuất cho em' : 'Đề thi thư viện gần đây') + '</h3>';
+        s += '      <button type="button" class="sp-link-btn" data-c83="lib">Xem tất cả (' + d.topics.length + ') ➜</button>';
+        s += '    </div>';
+        
+        if (d.picked && d.picked.length) {
+            s += '    <div class="sp-topic-list">';
+            d.picked.forEach(function(item) {
+                var tp = item.t;
+                s += '      <div class="sp-topic-card" data-c83="topic" data-id="' + H(tp.id) + '">';
+                s += '        <div class="sp-topic-info">';
+                s += '          <div class="sp-topic-title">' + H(tp.title || tp.name || 'Đề thi không tên') + '</div>';
+                s += '          <div class="sp-topic-sub">' + (tp.subject ? H(tp.subject) + ' • ' : '') + (tp.grade ? 'Khối ' + H(tp.grade) + ' • ' : '') + (item.a ? item.a + ' lượt thi' : 'Chưa có lượt thi') + '</div>';
+                s += '        </div>';
+                s += '        <button type="button" class="sp-btn-do" data-c83="topic" data-id="' + H(tp.id) + '"><i class="ph-bold ph-play"></i> ' + (d.stu ? 'Làm bài' : 'Xem') + '</button>';
+                s += '      </div>';
+            });
+            s += '    </div>';
+        } else {
+            s += '    <div class="sp-empty-box"><i class="ph-duotone ph-books" style="font-size:36px; color:#94A3B8;"></i><p>Chưa có đề thi nào. Bấm <b>Thư viện</b> để tạo hoặc nhập đề Word!</p></div>';
+        }
+        s += '  </div>';
+
+        // Right: Bảng xếp hạng học sinh tiêu biểu (Top Stars)
+        s += '  <div class="sp-panel">';
+        s += '    <div class="sp-panel-head">';
+        s += '      <h3 class="sp-panel-title"><i class="ph-duotone ph-trophy" style="color:#A56E11;"></i> Bảng vàng vinh danh</h3>';
+        s += '      <span class="sp-badge-tag">' + (d.starWeek ? 'Tuần này' : 'Tất cả') + '</span>';
+        s += '    </div>';
+
+        if (d.stars && d.stars.length) {
+            s += '    <div class="sp-rank-list">';
+            d.stars.slice(0, 5).forEach(function(st, idx) {
+                var medal = idx === 0 ? '🥇' : idx === 1 ? '🥈' : idx === 2 ? '🥉' : (idx + 1);
+                s += '      <div class="sp-rank-row r' + (idx < 3 ? idx + 1 : 0) + '">';
+                s += '        <div class="sp-rank-no">' + medal + '</div>';
+                s += '        <div class="sp-rank-info">';
+                s += '          <div class="sp-rank-name">' + H(st.name) + '</div>';
+                s += '          <div class="sp-rank-sub">' + (st.cls ? 'Lớp ' + H(st.cls) + ' • ' : '') + st.n + ' bài đã làm</div>';
+                s += '        </div>';
+                s += '        <div class="sp-rank-score">' + F1(st.avg) + ' đ</div>';
+                s += '      </div>';
+            });
+            s += '    </div>';
+        } else {
+            s += '    <div class="sp-empty-box"><i class="ph-duotone ph-medal" style="font-size:36px; color:#94A3B8;"></i><p>Chưa có dữ liệu bài thi. Hãy giao đề để vinh danh học sinh!</p></div>';
+        }
+        s += '  </div>';
+
+        s += '</div>'; // end sp-bottom-grid
+        s += '</div>'; // end sp-dashboard-wrap
+
         return s;
     }
 
@@ -22441,6 +23495,7 @@ body {
             else if (a === 'new') openEditor(null);
             else if (a === 'word') { openEditor(null); setTimeout(function () { if (typeof openWordImportModal === 'function') openWordImportModal(); }, 350); }
             else if (a === 'mix') { if (window.CODE93Mix) CODE93Mix.open(); }
+            else if (a === 'members') { if (window.MemberMgr) MemberMgr.open(); }
             else if (a === 'topic') loadTopic(id);
             else if (a === 'result') openResultsModal(id);
         } catch (err) { console.warn('[CODE83] ' + a, err); }
@@ -28867,6 +29922,471 @@ body {
     border: 1px solid var(--sp-border) !important;
     box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
 }
+
+/* ---------------- OPTION B: PASTEL DASHBOARD STYLES ---------------- */
+.sp-dashboard-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 2px;
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+.sp-top-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 18px 24px;
+    border: 1px solid var(--sp-border);
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sp-greet-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--sp-text);
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+.sp-greet-sub {
+    font-size: 13.5px;
+    color: var(--sp-muted);
+    font-weight: 500;
+}
+
+.sp-banner-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sp-badge-cloud {
+    background: #E0F2FE;
+    color: #0369A1;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sp-badge-year {
+    background: var(--sp-mint-bg);
+    color: var(--sp-mint-icon);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 4 Core Pop Cards Grid */
+.sp-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 1200px) {
+    .sp-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+    .sp-cards-grid { grid-template-columns: 1fr; }
+}
+
+.sp-card-pop {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 1px solid var(--sp-border);
+    padding: 22px 20px;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+}
+
+.sp-card-pop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(36, 60, 65, 0.08);
+}
+
+.sp-card-pop.mint:hover { border-color: #A3D6CE; }
+.sp-card-pop.pink:hover { border-color: #F3BED9; }
+.sp-card-pop.yellow:hover { border-color: #FDE68A; }
+.sp-card-pop.lavender:hover { border-color: #D6C2F0; }
+
+.sp-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sp-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: transform 0.2s ease;
+}
+
+.sp-card-pop:hover .sp-card-icon {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.sp-card-pop.mint .sp-card-icon { background: var(--sp-mint-bg); color: var(--sp-mint-icon); }
+.sp-card-pop.pink .sp-card-icon { background: var(--sp-pink-bg); color: var(--sp-pink-icon); }
+.sp-card-pop.yellow .sp-card-icon { background: var(--sp-yellow-bg); color: var(--sp-yellow-icon); }
+.sp-card-pop.lavender .sp-card-icon { background: var(--sp-lavender-bg); color: var(--sp-lavender-icon); }
+
+.sp-card-pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.4px;
+}
+
+.sp-card-pop.mint .sp-card-pill { background: var(--sp-mint-bg); color: var(--sp-mint-icon); }
+.sp-card-pop.pink .sp-card-pill { background: var(--sp-pink-bg); color: var(--sp-pink-icon); }
+.sp-card-pop.yellow .sp-card-pill { background: var(--sp-yellow-bg); color: var(--sp-yellow-icon); }
+.sp-card-pop.lavender .sp-card-pill { background: var(--sp-lavender-bg); color: var(--sp-lavender-icon); }
+
+.sp-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--sp-muted);
+    margin-bottom: 4px;
+}
+
+.sp-card-stat {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--sp-text);
+    line-height: 1.15;
+    margin-bottom: 6px;
+}
+
+.sp-card-desc {
+    font-size: 12.5px;
+    color: #64748B;
+    line-height: 1.4;
+}
+
+/* Secondary Action Row */
+.sp-actions-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sp-act-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    border: 1px solid var(--sp-border);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sp-text);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    transition: all 0.18s ease;
+}
+
+.sp-act-pill:hover {
+    background: #F8FAFB;
+    border-color: #CBD5E1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.sp-act-pill i {
+    font-size: 18px;
+}
+
+/* Bottom 2-Column Grid */
+.sp-bottom-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .sp-bottom-grid { grid-template-columns: 1fr; }
+}
+
+.sp-panel {
+    background: #FFFFFF;
+    border-radius: 22px;
+    border: 1px solid var(--sp-border);
+    padding: 22px;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03);
+}
+
+.sp-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sp-panel-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--sp-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sp-link-btn {
+    background: transparent;
+    border: none;
+    color: #0284C7;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.sp-link-btn:hover {
+    text-decoration: underline;
+}
+
+.sp-badge-tag {
+    background: #F1F5F9;
+    color: #475569;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Topic list */
+.sp-topic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sp-topic-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F8FAFB;
+    border: 1px solid var(--sp-border);
+    padding: 12px 16px;
+    border-radius: 16px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.sp-topic-card:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+.sp-topic-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--sp-text);
+    margin-bottom: 2px;
+}
+
+.sp-topic-sub {
+    font-size: 12px;
+    color: var(--sp-muted);
+}
+
+.sp-btn-do {
+    background: var(--sp-accent);
+    color: #FFFFFF;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sp-btn-do:hover {
+    background: #2D3446;
+}
+
+/* Rank list */
+.sp-rank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sp-rank-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F8FAFB;
+    border: 1px solid var(--sp-border);
+    padding: 10px 14px;
+    border-radius: 14px;
+}
+
+.sp-rank-row.r1 {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+.sp-rank-no {
+    font-size: 18px;
+    font-weight: 900;
+    width: 28px;
+    text-align: center;
+}
+
+.sp-rank-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.sp-rank-name {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--sp-text);
+}
+
+.sp-rank-sub {
+    font-size: 11.5px;
+    color: var(--sp-muted);
+}
+
+.sp-rank-score {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--sp-mint-icon);
+    background: var(--sp-mint-bg);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.sp-empty-box {
+    text-align: center;
+    padding: 30px 16px;
+    color: var(--sp-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ---------------- OPTION B: EXAM & QUESTION TYPOGRAPHY ---------------- */
+:is(#questions-container, .qc-live) .q-option-btn,
+:is(#questions-container, .qc-live) .q-option-btn *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-tf-row,
+:is(#questions-container, .qc-live) .q-tf-row *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-sa-label,
+:is(#questions-container, .qc-live) .q-sa-key,
+:is(#questions-container, .qc-live) .q-part-header,
+:is(#questions-container, .qc-live) .q-part-header *:not(.katex):not(.katex *),
+:is(#questions-container, .qc-live) .q-title-text,
+:is(#questions-container, .qc-live) .q-stem-normal {
+    font-family: 'Be Vietnam Pro', 'Nunito', sans-serif !important;
+}
+
+:is(#questions-container, .qc-live) .q-card,
+:is(#questions-container, .qc-live) .question-card {
+    background: #FFFFFF !important;
+    border: 1px solid var(--sp-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 16px rgba(36, 60, 65, 0.03) !important;
+    padding: 24px 22px !important;
+    margin-bottom: 20px !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn {
+    border-radius: 14px !important;
+    border: 1.5px solid #E2E8F0 !important;
+    padding: 12px 18px !important;
+    transition: all 0.15s ease !important;
+    background: #FFFFFF !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn:hover {
+    border-color: #168C81 !important;
+    background: #F3F9F8 !important;
+}
+
+:is(#questions-container, .qc-live) .q-option-btn.selected,
+:is(#questions-container, .qc-live) .q-option-btn.active,
+:is(#questions-container, .qc-live) .q-tf-btn.selected {
+    background: #D4ECE8 !important;
+    border-color: #168C81 !important;
+    color: #168C81 !important;
+    font-weight: 800 !important;
+}
+
+/* ---------------- OPTION B: MODAL POLISH ---------------- */
+#library-modal > div,
+#class-modal > div,
+#word-import-modal > div,
+#share-link-modal > div,
+#results-modal > div,
+#result-detail-modal > div,
+#editor-modal > div {
+    border-radius: 24px !important;
+    border: 1px solid var(--sp-border) !important;
+    box-shadow: 0 24px 60px rgba(25, 29, 43, 0.18) !important;
+    overflow: hidden !important;
+}
+
+#library-modal .bg-gradient-to-r,
+#class-modal .bg-gradient-to-r,
+#share-link-modal .bg-gradient-to-r,
+#word-import-modal .bg-gradient-to-r,
+#results-modal .bg-gradient-to-r {
+    background: #191D2B !important;
+    color: #FFFFFF !important;
+    padding: 16px 22px !important;
+}
+
+/* Scrollbar refinement */
+.custom-scrollbar::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
 </style>
 
 </head><body><h3>Đánh giá tiến bộ lớp ' + e2(cls.name) + ' - ' + e2(p.label) + '</h3><table border="1">' + h + '</table>
